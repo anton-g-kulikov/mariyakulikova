@@ -61,8 +61,8 @@
 ### SHUFFLE-TEST-005: Keyboard Lock-and-Move
 
 - **Status**: ✅ COMPLETED
-- **Description**: Verify that Space locks a coin and subsequent arrow keys move it
-- **Expected**: Coin moves to adjacent empty slot when locked; focus doesn't move independently while locked
+- **Description**: Verify that Space locks a coin and subsequent arrow keys move it, keeping it locked
+- **Expected**: Coin moves to adjacent empty slot when locked; focus follows coin and remains locked until Space is hit again
 - **Test File**: `test/integration/shuffle-keyboard.test.tsx`
 
 ### SHUFFLE-TEST-006: Touch Dragging

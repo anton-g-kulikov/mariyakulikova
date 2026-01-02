@@ -15,6 +15,7 @@
 - [x] **SHUFFLE-TASK-005: Add win condition detection, finish screen, and reset functionality** - ✅ **COMPLETED** - Detect when coins are swapped, show congratulations with score, and provide a way to restart
 - [x] **SHUFFLE-TASK-006: Implement Legend and Move Counter UI** - ✅ **COMPLETED** - Add a legend describing rules/controls and a counter for moves made
 - [x] **SHUFFLE-TASK-007: Implement dedicated Reset Button** - ✅ **COMPLETED** - Add a button to reset the game state and move counter
+- [x] **SHUFFLE-TASK-008: Update keyboard lock-in behavior** - ✅ **COMPLETED** - Keep coin locked after move; release only on Space hit
 
 ## Task Status Legend
 

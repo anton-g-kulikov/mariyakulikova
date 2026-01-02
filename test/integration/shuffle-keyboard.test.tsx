@@ -26,5 +26,9 @@ describe("Coins Shuffler Keyboard", () => {
 
     // Verify move counter incremented
     expect(screen.getByText(/Moves: 1/i)).toBeInTheDocument();
+
+    // Press ArrowRight again to move to C2 (should still be locked)
+    fireEvent.keyDown(window, { key: "ArrowRight" });
+    expect(screen.getByText(/Moves: 2/i)).toBeInTheDocument();
   });
 });

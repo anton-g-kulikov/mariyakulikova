@@ -76,7 +76,7 @@ export const CoinsShuffler: React.FC = () => {
         if (selectedSlot) {
           if (handleMove(selectedSlot, next)) {
             setFocusedSlot(next);
-            setSelectedSlot(null);
+            setSelectedSlot(next);
           }
         } else {
           setFocusedSlot(next);
