@@ -39,6 +39,10 @@
 
 - [x] **SHUFFLE-TASK-025: Increase move-dot hit radius to 33px** - ✅ **COMPLETED** - Further expand the invisible target circle for move dots from 22px to 33px radius to improve tapability
 
+## UI & Layout
+
+- [x] **UI-TASK-001: Restore page scroll while keeping drag/tap playable** - ✅ **COMPLETED** - Allow vertical page scrolling again (after drag controls removal) while preserving game usability; prevent horizontal overflow
+
 ## Project Structure & Navigation
 
 - [x] **CORE-TASK-001: Implement routing and landing page** - ✅ **COMPLETED** - Set up react-router-dom, created Home page with links, and moved Coins Shuffler to its own route

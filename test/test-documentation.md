@@ -235,6 +235,14 @@
 - **Expected**: Each move dot renders an expanded hit target (e.g., r≥33px) that triggers the move when clicked/tapped
 - **Test File**: `test/integration/shuffle-ui.test.tsx`
 
+## UI Test Cases
+
+| Test Case ID | Description                                                  | Type        | Status      |
+| :----------- | :----------------------------------------------------------- | :---------- | :---------- |
+| UI-INT-001   | Page allows vertical scroll while game remains usable        | Integration | Not Started |
+| UI-INT-002   | Horizontal overflow stays hidden after layout change         | Integration | Not Started |
+| UI-INT-003   | Tap-to-select interactions still work with scrolling enabled | Integration | Not Started |
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality
