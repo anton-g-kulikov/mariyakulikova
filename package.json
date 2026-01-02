@@ -1,5 +1,25 @@
 {
+  "name": "mariyakulikova",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
-    "metacoding": "^1.5.1"
+    "framer-motion": "^10.16.4",
+    "metacoding": "^1.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
   }
 }

@@ -28,6 +28,71 @@
 - **Expected**: .gitignore contains dist/, .env, and log patterns
 - **Test File**: N/A (Manual/File check)
 
+## Coins Shuffler Test Cases
+
+### SHUFFLE-TEST-001: Board Adjacency Logic
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the board graph correctly identifies adjacent slots
+- **Expected**: Moving from a slot to an adjacent one is allowed; moving to a non-adjacent one is blocked
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
+### SHUFFLE-TEST-002: Valid Move Execution
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that a coin can move to an adjacent empty slot
+- **Expected**: State updates correctly when a valid move is performed
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
+### SHUFFLE-TEST-003: Win Condition Detection
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the game detects when all blue coins are on the right and green on the left
+- **Expected**: `isWin` state becomes true when goal configuration is reached
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
+### SHUFFLE-TEST-004: Keyboard Navigation Focus
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that arrow keys move the focus rectangle between slots
+- **Expected**: Focus moves correctly in all 4 directions based on board layout
+- **Test File**: `test/integration/shuffle-keyboard.test.tsx`
+
+### SHUFFLE-TEST-005: Keyboard Lock-and-Move
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that Space locks a coin and subsequent arrow keys move it
+- **Expected**: Coin moves to adjacent empty slot when locked; focus doesn't move independently while locked
+- **Test File**: `test/integration/shuffle-keyboard.test.tsx`
+
+### SHUFFLE-TEST-006: Touch Dragging
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that dragging a coin to an adjacent empty slot works
+- **Expected**: Coin snaps to the target slot if dragged more than 50% of the way
+- **Test File**: `test/integration/shuffle-touch.test.tsx`
+
+### SHUFFLE-TEST-007: Move Counter Logic
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the move counter increments correctly for each valid move
+- **Expected**: Counter starts at 0 and increases by 1 for every successful coin slide
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
+### SHUFFLE-TEST-008: Finish Screen and Score Display
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the finish screen appears on win and displays the final move count
+- **Expected**: Finish screen is visible only when `isWin` is true; displays "Congratulations" and the correct final score
+- **Test File**: `test/integration/shuffle-ui.test.tsx`
+
+### SHUFFLE-TEST-009: Legend Visibility
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the game legend (rules and controls) is visible
+- **Expected**: Legend text is present and correctly describes touch and keyboard controls
+- **Test File**: `test/integration/shuffle-ui.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality
