@@ -163,6 +163,13 @@
 - **Expected**: "Ходы", "Правила", "Начать заново" and other strings are correctly displayed
 - **Test File**: `test/integration/shuffle-ui.test.tsx`, `test/integration/touch-drag.test.tsx`
 
+### SHUFFLE-TEST-020: Child-Friendly Design
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the design uses a colorful and child-friendly palette
+- **Expected**: Background is soft pink, text is dark purple, buttons are rounded and bright
+- **Test File**: N/A (Visual/Code Verification)
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality

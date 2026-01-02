@@ -25,6 +25,7 @@
 - [x] **SHUFFLE-TASK-015: Adjust slot visual size** - ✅ **COMPLETED** - Updated board coordinates to 80px spacing to remove gaps between slots
 - [x] **SHUFFLE-TASK-016: Fix mobile drag direction** - ✅ **COMPLETED** - Replaced CSS rotation with dynamic coordinate swapping to ensure drag logic matches visual layout
 - [x] **SHUFFLE-TASK-017: Translate Coins Shuffler to Russian** - ✅ **COMPLETED** - Translated all UI strings, legend, and aria-labels to Russian; updated tests to match <!-- id: 17 -->
+- [x] **SHUFFLE-TASK-018: Update design for child-friendly theme** - ✅ **COMPLETED** - Update colors, backgrounds, and styles to be more colorful and appealing to children <!-- id: 18 -->
 
 ## Project Structure & Navigation
 

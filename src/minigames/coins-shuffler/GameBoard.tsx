@@ -110,7 +110,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         }}
       >
         {/* Board Outline */}
-        <path d={boardPath} fill="none" stroke="#fff" strokeWidth="2" />
+        <path d={boardPath} fill="#fff" stroke="#db2777" strokeWidth="4" />
 
         {/* Slots */}
         {(Object.keys(slotCoords) as SlotId[]).map((id) => (
@@ -122,8 +122,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
               width="80"
               height="80"
               fill="transparent"
-              stroke={focusedSlot === id ? "#ffeb3b" : "transparent"}
-              strokeWidth={focusedSlot === id ? "2" : "0"}
+              stroke={focusedSlot === id ? "#facc15" : "transparent"}
+              strokeWidth={focusedSlot === id ? "4" : "0"}
+              rx="10"
             />
             {selectedSlot === id && (
               <rect
@@ -132,9 +133,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 width="84"
                 height="84"
                 fill="none"
-                stroke="#9c27b0"
-                strokeWidth="3"
-                strokeDasharray="4 2"
+                stroke="#a855f7"
+                strokeWidth="4"
+                strokeDasharray="8 4"
+                rx="12"
               />
             )}
           </g>
@@ -155,9 +157,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 cx={slotCoords[id].x}
                 cy={slotCoords[id].y}
                 r="35"
-                fill={color === "blue" ? "#4a90e2" : "#7ed321"}
+                fill={color === "blue" ? "#06b6d4" : "#84cc16"}
                 stroke="#fff"
-                strokeWidth="2"
+                strokeWidth="3"
                 drag
                 dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
                 dragElastic={0.1}

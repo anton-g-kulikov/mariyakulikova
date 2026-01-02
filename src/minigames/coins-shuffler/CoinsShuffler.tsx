@@ -116,13 +116,15 @@ export const CoinsShuffler: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         padding: "20px",
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: "#fdf2f8", // Soft pink/lavender background
+        color: "#4c1d95", // Dark purple text
         minHeight: "100vh",
-        fontFamily: "sans-serif",
+        fontFamily: "'Comic Sans MS', 'Chalkboard SE', 'cursive', sans-serif", // Playful font
       }}
     >
-      <h1>Пятнашки с монетами</h1>
+      <h1 style={{ fontSize: "36px", marginBottom: "30px", textShadow: "2px 2px #fbcfe8" }}>
+        Пятнашки с монетами
+      </h1>
 
       <div
         style={{
@@ -148,21 +150,38 @@ export const CoinsShuffler: React.FC = () => {
             maxWidth: "300px",
           }}
         >
-          <div style={{ fontSize: "24px", fontWeight: "bold" }}>
+          <div
+            style={{
+              fontSize: "28px",
+              fontWeight: "bold",
+              backgroundColor: "#fff",
+              padding: "10px 20px",
+              borderRadius: "15px",
+              border: "3px solid #fbcfe8",
+              textAlign: "center",
+              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+            }}
+          >
             Ходы: {state.moveCount}
           </div>
           <Legend />
           <button
             onClick={handleReset}
             style={{
-              padding: "10px 20px",
-              fontSize: "16px",
+              padding: "15px 30px",
+              fontSize: "20px",
+              fontWeight: "bold",
               cursor: "pointer",
-              backgroundColor: "#333",
+              backgroundColor: "#ec4899", // Bright pink
               color: "#fff",
-              border: "1px solid #fff",
-              borderRadius: "4px",
+              border: "none",
+              borderRadius: "30px",
+              boxShadow: "0 4px 0 #be185d",
+              transition: "transform 0.1s",
             }}
+            onMouseDown={(e) => (e.currentTarget.style.transform = "translateY(4px)")}
+            onMouseUp={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
           >
             Начать заново
           </button>
@@ -177,7 +196,7 @@ export const CoinsShuffler: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.8)",
+            backgroundColor: "rgba(253, 242, 248, 0.9)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -185,23 +204,27 @@ export const CoinsShuffler: React.FC = () => {
             zIndex: 100,
           }}
         >
-          <h2 style={{ fontSize: "48px", color: "#4caf50" }}>Поздравляем!</h2>
-          <p style={{ fontSize: "24px" }}>
-            Вы закончили за {state.moveCount} ходов.
+          <h2 style={{ fontSize: "48px", color: "#db2777", marginBottom: "20px" }}>
+            🎉 Ура! Победа! 🎉
+          </h2>
+          <p style={{ fontSize: "24px", color: "#4c1d95", marginBottom: "30px" }}>
+            Ты справилась за {state.moveCount} ходов!
           </p>
           <button
             onClick={handleReset}
             style={{
-              padding: "15px 30px",
-              fontSize: "20px",
+              padding: "20px 40px",
+              fontSize: "24px",
+              fontWeight: "bold",
               cursor: "pointer",
-              backgroundColor: "#4caf50",
+              backgroundColor: "#84cc16", // Lime green
               color: "#fff",
               border: "none",
-              borderRadius: "8px",
+              borderRadius: "40px",
+              boxShadow: "0 6px 0 #65a30d",
             }}
           >
-            Играть снова
+            Играть еще раз
           </button>
         </div>
       )}
