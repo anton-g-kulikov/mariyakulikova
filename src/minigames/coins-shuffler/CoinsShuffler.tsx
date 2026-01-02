@@ -87,8 +87,10 @@ export const CoinsShuffler: React.FC = () => {
           let match = false;
           if (key === "ArrowUp" && dy < -10 && Math.abs(dx) < 40) match = true;
           if (key === "ArrowDown" && dy > 10 && Math.abs(dx) < 40) match = true;
-          if (key === "ArrowLeft" && dx < -10 && Math.abs(dy) < 40) match = true;
-          if (key === "ArrowRight" && dx > 10 && Math.abs(dy) < 40) match = true;
+          if (key === "ArrowLeft" && dx < -10 && Math.abs(dy) < 40)
+            match = true;
+          if (key === "ArrowRight" && dx > 10 && Math.abs(dy) < 40)
+            match = true;
 
           if (match) {
             const dist = Math.sqrt(dx * dx + dy * dy);

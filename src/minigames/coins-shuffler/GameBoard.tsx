@@ -60,8 +60,12 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   return (
     <div
       style={{
-        width: isMobile ? `${levelConfig.widthMobile}px` : `${levelConfig.widthDesktop}px`,
-        height: isMobile ? `${levelConfig.heightMobile}px` : `${levelConfig.heightDesktop}px`,
+        width: isMobile
+          ? `${levelConfig.widthMobile}px`
+          : `${levelConfig.widthDesktop}px`,
+        height: isMobile
+          ? `${levelConfig.heightMobile}px`
+          : `${levelConfig.heightDesktop}px`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -71,7 +75,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       <svg
         width={isMobile ? levelConfig.widthMobile : levelConfig.widthDesktop}
         height={isMobile ? levelConfig.heightMobile : levelConfig.heightDesktop}
-        viewBox={isMobile ? levelConfig.viewBoxMobile : levelConfig.viewBoxDesktop}
+        viewBox={
+          isMobile ? levelConfig.viewBoxMobile : levelConfig.viewBoxDesktop
+        }
         style={{
           flexShrink: 0,
         }}

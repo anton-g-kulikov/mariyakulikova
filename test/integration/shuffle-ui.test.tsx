@@ -20,14 +20,14 @@ describe("Coins Shuffler UI", () => {
 
   test("Board renders correct number of slots for Level 1", () => {
     const { container } = render(<CoinsShuffler />);
-    // Level 1 has 3 slots
+    // Level 1 has 4 slots (S1, S2, S3, P1)
     const slots = container.querySelectorAll('[data-testid^="slot-"]');
-    expect(slots.length).toBe(3);
+    expect(slots.length).toBe(4);
   });
 
   test("Level selection changes board", () => {
     const { container } = render(<CoinsShuffler />);
-    
+
     // Click Level 3 button
     const level3Button = screen.getByRole("button", { name: /Уровень 3/i });
     fireEvent.click(level3Button);
@@ -66,11 +66,11 @@ describe("Coins Shuffler UI", () => {
 
     render(<CoinsShuffler />);
 
-    // Level 1 desktop is 260x100. Mobile should be 100x260.
+    // Level 1 desktop is 260x180. Mobile should be 180x260.
     const svg = screen
       .getByRole("img", { name: /синяя монета в S1/i })
       .closest("svg");
-    expect(svg).toHaveAttribute("width", "100");
+    expect(svg).toHaveAttribute("width", "180");
     expect(svg).toHaveAttribute("height", "260");
   });
 });
