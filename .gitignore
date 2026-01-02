@@ -31,5 +31,4 @@ coverage/
 .vscode/copilot-instructions.md
 .idea/copilot-instructions.md
 .cursor/
-.github
-.vscode
+.vscode!.github/workflows/
