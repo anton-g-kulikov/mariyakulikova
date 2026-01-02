@@ -83,13 +83,15 @@ describe("Touch Drag Sensitivity", () => {
 
     render(<CoinsShuffler />);
 
-    // L2 is at (50, 130). C1 is at (130, 130).
-    // To move L2 -> C1 (Board Right), we need to drag Screen DOWN on rotated board.
-    // Since the SVG is rotated via CSS, framer-motion reports this as a Local X+ drag.
-    // So we simulate offset { x: 25, y: 0 }.
+    // L2 is at (50, 130) in Desktop.
+    // In Mobile (swapped), L2 is at (130, 50).
+    // C1 is at (130, 130) in Desktop.
+    // In Mobile (swapped), C1 is at (130, 130).
+    // To move L2 -> C1, we need to move +Y (Down).
+    // So we simulate offset { x: 0, y: 25 }.
 
     const coin = screen.getByTestId("coin-L2");
-    (coin as any)._testOffset = { x: 25, y: 0 };
+    (coin as any)._testOffset = { x: 0, y: 25 };
 
     fireEvent.click(coin);
 

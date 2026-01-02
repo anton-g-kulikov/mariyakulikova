@@ -10,7 +10,7 @@ interface GameBoardProps {
   isMobile: boolean;
 }
 
-export const SLOT_COORDS: Record<SlotId, { x: number; y: number }> = {
+export const SLOT_COORDS_DESKTOP: Record<SlotId, { x: number; y: number }> = {
   L1: { x: 50, y: 50 },
   L2: { x: 50, y: 130 },
   L3: { x: 50, y: 210 },
@@ -23,6 +23,24 @@ export const SLOT_COORDS: Record<SlotId, { x: number; y: number }> = {
   P1: { x: 210, y: 50 },
 };
 
+export const SLOT_COORDS_MOBILE: Record<SlotId, { x: number; y: number }> = {
+  L1: { x: 50, y: 50 },
+  L2: { x: 130, y: 50 },
+  L3: { x: 210, y: 50 },
+  C1: { x: 130, y: 130 },
+  C2: { x: 130, y: 210 },
+  C3: { x: 130, y: 290 },
+  R1: { x: 50, y: 370 },
+  R2: { x: 130, y: 370 },
+  R3: { x: 210, y: 370 },
+  P1: { x: 50, y: 210 },
+};
+
+const BOARD_PATH_DESKTOP =
+  "M 10,10 H 90 V 90 H 170 V 10 H 250 V 90 H 330 V 10 H 410 V 250 H 330 V 170 H 90 V 250 H 10 Z";
+const BOARD_PATH_MOBILE =
+  "M 10,10 H 250 V 90 H 170 V 330 H 250 V 410 H 10 V 330 H 90 V 250 H 10 V 170 H 90 V 90 H 10 Z";
+
 export const GameBoard: React.FC<GameBoardProps> = ({
   positions,
   onMove,
@@ -30,6 +48,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   selectedSlot,
   isMobile,
 }) => {
+  const slotCoords = isMobile ? SLOT_COORDS_MOBILE : SLOT_COORDS_DESKTOP;
+  const boardPath = isMobile ? BOARD_PATH_MOBILE : BOARD_PATH_DESKTOP;
+
   const handleDragEnd = (from: SlotId, info: any) => {
     // Find the nearest slot
     let nearestSlot: SlotId | null = null;
@@ -46,13 +67,13 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     // So dragging "Down" on screen (along the rotated X-axis) correctly reports
     // as an X-offset in the local space, which matches our board logic.
 
-    const currentCoord = SLOT_COORDS[from];
+    const currentCoord = slotCoords[from];
     const targetX = currentCoord.x + dragX;
     const targetY = currentCoord.y + dragY;
 
-    (Object.keys(SLOT_COORDS) as SlotId[]).forEach((id) => {
+    (Object.keys(slotCoords) as SlotId[]).forEach((id) => {
       if (id === from) return;
-      const slot = SLOT_COORDS[id];
+      const slot = slotCoords[id];
       const dist = Math.sqrt(
         Math.pow(slot.x - targetX, 2) + Math.pow(slot.y - targetY, 2)
       );
@@ -81,29 +102,28 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       }}
     >
       <svg
-        width="420"
-        height="260"
-        viewBox="0 0 420 260"
+        width={isMobile ? "260" : "420"}
+        height={isMobile ? "420" : "260"}
+        viewBox={isMobile ? "0 0 260 420" : "0 0 420 260"}
         style={{
-          transform: isMobile ? "rotate(90deg)" : "none",
           flexShrink: 0,
         }}
       >
         {/* Board Outline */}
         <path
-          d="M 10,10 H 90 V 90 H 170 V 10 H 250 V 90 H 330 V 10 H 410 V 250 H 330 V 170 H 90 V 250 H 10 Z"
+          d={boardPath}
           fill="none"
           stroke="#fff"
           strokeWidth="2"
         />
 
         {/* Slots */}
-        {(Object.keys(SLOT_COORDS) as SlotId[]).map((id) => (
+        {(Object.keys(slotCoords) as SlotId[]).map((id) => (
           <g key={id}>
             <rect
               data-testid={`slot-${id}`}
-              x={SLOT_COORDS[id].x - 40}
-              y={SLOT_COORDS[id].y - 40}
+              x={slotCoords[id].x - 40}
+              y={slotCoords[id].y - 40}
               width="80"
               height="80"
               fill="transparent"
@@ -112,8 +132,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
             />
             {selectedSlot === id && (
               <rect
-                x={SLOT_COORDS[id].x - 42}
-                y={SLOT_COORDS[id].y - 42}
+                x={slotCoords[id].x - 42}
+                y={slotCoords[id].y - 42}
                 width="84"
                 height="84"
                 fill="none"
@@ -135,8 +155,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 data-testid={`coin-${id}`}
                 role="img"
                 aria-label={`${color} coin at ${id}`}
-                cx={SLOT_COORDS[id].x}
-                cy={SLOT_COORDS[id].y}
+                cx={slotCoords[id].x}
+                cy={slotCoords[id].y}
                 r="35"
                 fill={color === "blue" ? "#4a90e2" : "#7ed321"}
                 stroke="#fff"

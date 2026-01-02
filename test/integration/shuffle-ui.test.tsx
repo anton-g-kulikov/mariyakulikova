@@ -52,10 +52,11 @@ describe("Coins Shuffler UI", () => {
 
     render(<CoinsShuffler />);
 
-    // The SVG should have rotate(90deg) transform
+    // The SVG should have swapped dimensions (260x420) instead of rotation
     const svg = screen
       .getByRole("img", { name: /blue coin at L1/i })
       .closest("svg");
-    expect(svg).toHaveStyle("transform: rotate(90deg)");
+    expect(svg).toHaveAttribute("width", "260");
+    expect(svg).toHaveAttribute("height", "420");
   });
 });

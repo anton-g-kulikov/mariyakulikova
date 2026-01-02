@@ -149,6 +149,13 @@
 - **Expected**: SVG path defines a continuous board where 80x80 slots touch each other
 - **Test File**: N/A (Visual/Code Verification)
 
+### SHUFFLE-TEST-018: Mobile Drag Direction
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that dragging Screen Down on mobile triggers a move to the slot visually below
+- **Expected**: Drag offset {x:0, y:25} triggers move from L2 to C1 (which is visually below L2 in mobile layout)
+- **Test File**: `test/integration/touch-drag.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality
