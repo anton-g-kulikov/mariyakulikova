@@ -28,13 +28,22 @@ describe("Coins Shuffler UI", () => {
   test("Level selection changes board", () => {
     const { container } = render(<CoinsShuffler />);
 
+    // Click Level 2 button
+    const level2Button = screen.getByRole("button", { name: /Уровень 2/i });
+    fireEvent.click(level2Button);
+
+    // Level 2 has 7 slots (S1-S5, P1, P2)
+    const slots2 = container.querySelectorAll('[data-testid^="slot-"]');
+    expect(slots2.length).toBe(7);
+    expect(screen.getByText(/Посложнее/i)).toBeInTheDocument();
+
     // Click Level 3 button
     const level3Button = screen.getByRole("button", { name: /Уровень 3/i });
     fireEvent.click(level3Button);
 
     // Level 3 has 10 slots
-    const slots = container.querySelectorAll('[data-testid^="slot-"]');
-    expect(slots.length).toBe(10);
+    const slots3 = container.querySelectorAll('[data-testid^="slot-"]');
+    expect(slots3.length).toBe(10);
     expect(screen.getByText(/Классика/i)).toBeInTheDocument();
   });
 
