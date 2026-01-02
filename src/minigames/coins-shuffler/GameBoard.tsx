@@ -63,21 +63,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   };
 
   return (
-    <svg
-      width="550"
-      height="350"
-      viewBox="0 0 550 350"
-      style={{ border: "1px solid #333" }}
-    >
+    <svg width="550" height="350" viewBox="0 0 550 350">
       {/* Board Outline */}
       <path
-        d="M 10,10 H 90 V 110 H 410 V 10 H 490 V 290 H 410 V 190 H 90 V 290 H 10 Z"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2"
-      />
-      <path
-        d="M 210,110 V 10 H 290 V 110 Z"
+        d="M 10,10 H 90 V 110 H 210 V 10 H 290 V 110 H 410 V 10 H 490 V 290 H 410 V 190 H 90 V 290 H 10 Z"
         fill="none"
         stroke="#fff"
         strokeWidth="2"
@@ -93,8 +82,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
             width="80"
             height="80"
             fill="transparent"
-            stroke={focusedSlot === id ? "#ffeb3b" : "#333"}
-            strokeWidth={focusedSlot === id ? "2" : "1"}
+            stroke={focusedSlot === id ? "#ffeb3b" : "transparent"}
+            strokeWidth={focusedSlot === id ? "2" : "0"}
           />
           {selectedSlot === id && (
             <rect

@@ -25,3 +25,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Enhanced visual feedback: Focus border changed to yellow, locked border changed to violet.
   - Increased touch sensitivity: Coins now trigger movement significantly earlier in the drag process.
   - Added dedicated Reset Button for easier game restarts.
+  - Cleaned up Board UI: Removed faint slot grid lines and unified the board border into a single solid path.

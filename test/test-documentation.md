@@ -114,6 +114,13 @@
 - **Expected**: Coin moves to adjacent slot with a smaller drag distance (e.g., 25 units instead of 50+ units)
 - **Test File**: `test/integration/touch-drag.test.tsx`
 
+### SHUFFLE-TEST-013: Board UI Cleanup
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that faint slot lines are removed and board border is a single path
+- **Expected**: No rects with #333 stroke; board outline is a single path element
+- **Test File**: `test/integration/shuffle-ui.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality
