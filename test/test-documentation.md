@@ -200,6 +200,20 @@
 - **Expected**: Dots appear after selection, disappear after deselect or move; move counter increments on dot click
 - **Test File**: `test/integration/shuffle-keyboard.test.tsx`
 
+### SHUFFLE-TEST-023: Focus stroke thickness by state
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify yellow outline is thick when selected (locked-in) and thinner when only focused
+- **Expected**: Selected slot stroke width is 6px; focused-only stroke width is 3px; non-focused/unstyled slots have no stroke
+- **Test File**: `test/integration/shuffle-keyboard.test.tsx`
+
+### SHUFFLE-TEST-024: Mouse selection shows thick stroke
+
+- **Status**: ✅ COMPLETED
+- **Description**: Click selection should show the thick (6px) yellow outline as it is now "locked-in"
+- **Expected**: Before click, focused slot stroke is 3px; after clicking the coin, stroke becomes 6px (selected)
+- **Test File**: `test/integration/shuffle-keyboard.test.tsx`
+
 ### SHUFFLE-TEST-021: Multi-Level System
 
 - **Status**: ✅ COMPLETED

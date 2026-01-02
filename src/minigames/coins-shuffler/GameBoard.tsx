@@ -7,7 +7,7 @@ interface GameBoardProps {
   levelConfig: LevelConfig;
   positions: Record<SlotId, CoinColor | null>;
   onMove: (from: SlotId, to: SlotId) => void;
-   onSelectSlot: (slot: SlotId) => void;
+  onSelectSlot: (slot: SlotId) => void;
   focusedSlot: SlotId | null;
   selectedSlot: SlotId | null;
   isMobile: boolean;
@@ -75,23 +75,16 @@ export const GameBoard: React.FC<GameBoardProps> = ({
               width="80"
               height="80"
               fill="transparent"
-              stroke={focusedSlot === id ? "#facc15" : "transparent"}
-              strokeWidth={focusedSlot === id ? "4" : "0"}
+              stroke={
+                focusedSlot === id || selectedSlot === id
+                  ? "#facc15"
+                  : "transparent"
+              }
+              strokeWidth={
+                selectedSlot === id ? "6" : focusedSlot === id ? "3" : "0"
+              }
               rx="10"
             />
-            {selectedSlot === id && (
-              <rect
-                x={slotCoords[id].x - 42}
-                y={slotCoords[id].y - 42}
-                width="84"
-                height="84"
-                fill="none"
-                stroke="#a855f7"
-                strokeWidth="4"
-                strokeDasharray="8 4"
-                rx="12"
-              />
-            )}
           </g>
         ))}
 
@@ -123,7 +116,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         )}
 
         {/* Move Dots */}
-        {selectedSlot && selectedColor &&
+        {selectedSlot &&
+          selectedColor &&
           availableTargets.map((target) => (
             <circle
               key={`dot-${target}`}

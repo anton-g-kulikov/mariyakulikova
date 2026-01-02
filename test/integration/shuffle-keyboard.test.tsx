@@ -2,6 +2,9 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { CoinsShuffler } from "../../src/minigames/coins-shuffler/CoinsShuffler";
+import { GameBoard } from "../../src/minigames/coins-shuffler/GameBoard";
+import { LEVELS } from "../../src/minigames/coins-shuffler/levels";
+import { getInitialState } from "../../src/minigames/coins-shuffler/logic";
 
 describe("Coins Shuffler Keyboard", () => {
   beforeEach(() => {
@@ -76,5 +79,65 @@ describe("Coins Shuffler Keyboard", () => {
 
     expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
     expect(screen.queryByTestId("move-dot-S2")).not.toBeInTheDocument();
+  });
+
+  test("SHUFFLE-TEST-023: Focus stroke thickness by state", () => {
+    const levelConfig = LEVELS.find((l) => l.id === 1)!;
+    const { positions } = getInitialState(1);
+
+    const { rerender } = render(
+      <GameBoard
+        levelConfig={levelConfig}
+        positions={positions}
+        onMove={jest.fn()}
+        onSelectSlot={jest.fn()}
+        focusedSlot="S1"
+        selectedSlot={null}
+        isMobile={false}
+      />
+    );
+
+    expect(screen.getByTestId("slot-S1")).toHaveAttribute("stroke-width", "3");
+
+    rerender(
+      <GameBoard
+        levelConfig={levelConfig}
+        positions={positions}
+        onMove={jest.fn()}
+        onSelectSlot={jest.fn()}
+        focusedSlot={null}
+        selectedSlot="S1"
+        isMobile={false}
+      />
+    );
+
+    expect(screen.getByTestId("slot-S1")).toHaveAttribute("stroke-width", "6");
+
+    rerender(
+      <GameBoard
+        levelConfig={levelConfig}
+        positions={positions}
+        onMove={jest.fn()}
+        onSelectSlot={jest.fn()}
+        focusedSlot={null}
+        selectedSlot={null}
+        isMobile={false}
+      />
+    );
+
+    expect(screen.getByTestId("slot-S1")).toHaveAttribute("stroke-width", "0");
+  });
+
+  test("SHUFFLE-TEST-024: Mouse selection shows thick stroke", () => {
+    render(<CoinsShuffler />);
+
+    // Initial focus on S1 should be thin (3px)
+    expect(screen.getByTestId("slot-S1")).toHaveAttribute("stroke-width", "3");
+
+    // Click the coin to select via mouse/touch
+    fireEvent.click(screen.getByTestId("coin-S1"));
+
+    // Now the outline should be the thicker selected width (6px)
+    expect(screen.getByTestId("slot-S1")).toHaveAttribute("stroke-width", "6");
   });
 });

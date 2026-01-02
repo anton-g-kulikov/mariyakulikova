@@ -29,6 +29,12 @@
 - [x] **SHUFFLE-TASK-019: Implement multi-level system** - ✅ **COMPLETED** - Added 3 levels with increasing difficulty, level selection UI, and dynamic board rendering <!-- id: 19 -->
 - [x] **SHUFFLE-TASK-020: Implement tap-to-select controls with move dots** - ✅ **COMPLETED** - Replace drag with tap selection, show available move dots (touch + keyboard), keep hover/scale animations
 
+- [x] **SHUFFLE-TASK-021: Adjust focus stroke widths** - ✅ **COMPLETED** - Differentiate yellow outline thickness for keyboard-focused vs non-locked states
+
+- [x] **SHUFFLE-TASK-022: Separate click selection from keyboard focus** - ✅ **COMPLETED** - Click/tap selection shows thin outline; keyboard focus stays thick only when locked-in
+
+- [x] **SHUFFLE-TASK-023: Fix focus vs selection stroke widths** - ✅ **COMPLETED** - Swap stroke widths so selection (locked-in) is 6px and focus is 3px
+
 ## Project Structure & Navigation
 
 - [x] **CORE-TASK-001: Implement routing and landing page** - ✅ **COMPLETED** - Set up react-router-dom, created Home page with links, and moved Coins Shuffler to its own route
