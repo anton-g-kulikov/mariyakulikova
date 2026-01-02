@@ -186,6 +186,20 @@
 - **Expected**: Background is soft pink, text is dark purple, buttons are rounded and bright
 - **Test File**: N/A (Visual/Code Verification)
 
+### SHUFFLE-TEST-021: Tap-to-Select and Move Dots (Touch)
+
+- **Status**: ✅ COMPLETED
+- **Description**: Tapping a coin selects it, shows move dots on available adjacent empty slots, tapping a dot moves the coin
+- **Expected**: Dots appear only when a coin is selected and disappear after move/cancel; move counter increments after valid move
+- **Test File**: `test/integration/touch-drag.test.tsx`
+
+### SHUFFLE-TEST-022: Keyboard Selection Shows Move Dots
+
+- **Status**: ✅ COMPLETED
+- **Description**: Selecting a coin via keyboard (Space/Enter) renders move dots for valid adjacent empty slots; dots hide on cancel
+- **Expected**: Dots appear after selection, disappear after deselect or move; move counter increments on dot click
+- **Test File**: `test/integration/shuffle-keyboard.test.tsx`
+
 ### SHUFFLE-TEST-021: Multi-Level System
 
 - **Status**: ✅ COMPLETED

@@ -7,6 +7,7 @@ interface GameBoardProps {
   levelConfig: LevelConfig;
   positions: Record<SlotId, CoinColor | null>;
   onMove: (from: SlotId, to: SlotId) => void;
+   onSelectSlot: (slot: SlotId) => void;
   focusedSlot: SlotId | null;
   selectedSlot: SlotId | null;
   isMobile: boolean;
@@ -16,6 +17,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   levelConfig,
   positions,
   onMove,
+  onSelectSlot,
   focusedSlot,
   selectedSlot,
   isMobile,
@@ -27,35 +29,13 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     ? levelConfig.boardPathMobile
     : levelConfig.boardPathDesktop;
 
-  const handleDragEnd = (from: SlotId, info: any) => {
-    // Find the nearest slot
-    let nearestSlot: SlotId | null = null;
-    let minDistance = Infinity;
-
-    const dragX = info.offset.x;
-    const dragY = info.offset.y;
-
-    const currentCoord = slotCoords[from];
-    const targetX = currentCoord.x + dragX;
-    const targetY = currentCoord.y + dragY;
-
-    (Object.keys(slotCoords) as SlotId[]).forEach((id) => {
-      if (id === from) return;
-      const slot = slotCoords[id];
-      const dist = Math.sqrt(
-        Math.pow(slot.x - targetX, 2) + Math.pow(slot.y - targetY, 2)
-      );
-      if (dist < minDistance) {
-        minDistance = dist;
-        nearestSlot = id;
-      }
-    });
-
-    // Trigger movement if we are within 72 units of another slot
-    if (nearestSlot && minDistance < 72) {
-      onMove(from, nearestSlot);
-    }
-  };
+  const selectedColor = selectedSlot ? positions[selectedSlot] : null;
+  const availableTargets: SlotId[] =
+    selectedSlot && positions[selectedSlot]
+      ? (levelConfig.adjacency[selectedSlot] || []).filter(
+          (id) => positions[id] === null
+        )
+      : [];
 
   return (
     <div
@@ -133,18 +113,31 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 fill={color === "blue" ? "#06b6d4" : "#84cc16"}
                 stroke="#fff"
                 strokeWidth="3"
-                drag
-                dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-                dragElastic={0.1}
-                onDragEnd={(_, info) => handleDragEnd(id, info)}
+                onClick={() => onSelectSlot(id)}
                 whileHover={{ scale: 1.1 }}
-                whileDrag={{ scale: 1.2, zIndex: 10 }}
                 layout
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
             );
           }
         )}
+
+        {/* Move Dots */}
+        {selectedSlot && selectedColor &&
+          availableTargets.map((target) => (
+            <circle
+              key={`dot-${target}`}
+              data-testid={`move-dot-${target}`}
+              cx={slotCoords[target].x}
+              cy={slotCoords[target].y}
+              r="10"
+              fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
+              stroke="#fff"
+              strokeWidth="3"
+              onClick={() => onMove(selectedSlot, target)}
+              style={{ cursor: "pointer" }}
+            />
+          ))}
       </svg>
     </div>
   );

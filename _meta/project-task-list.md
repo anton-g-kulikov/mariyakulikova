@@ -27,6 +27,7 @@
 - [x] **SHUFFLE-TASK-017: Translate Coins Shuffler to Russian** - ✅ **COMPLETED** - Translated all UI strings, legend, and aria-labels to Russian; updated tests to match <!-- id: 17 -->
 - [x] **SHUFFLE-TASK-018: Update design for child-friendly theme** - ✅ **COMPLETED** - Update colors, backgrounds, and styles to be more colorful and appealing to children <!-- id: 18 -->
 - [x] **SHUFFLE-TASK-019: Implement multi-level system** - ✅ **COMPLETED** - Added 3 levels with increasing difficulty, level selection UI, and dynamic board rendering <!-- id: 19 -->
+- [x] **SHUFFLE-TASK-020: Implement tap-to-select controls with move dots** - ✅ **COMPLETED** - Replace drag with tap selection, show available move dots (touch + keyboard), keep hover/scale animations
 
 ## Project Structure & Navigation
 

@@ -4,6 +4,14 @@ import "@testing-library/jest-dom";
 import { CoinsShuffler } from "../../src/minigames/coins-shuffler/CoinsShuffler";
 
 describe("Coins Shuffler Keyboard", () => {
+  beforeEach(() => {
+    Object.defineProperty(window, "innerWidth", {
+      writable: true,
+      configurable: true,
+      value: 1024,
+    });
+  });
+
   test("SHUFFLE-TEST-004: Keyboard Navigation Focus (Level 1)", () => {
     render(<CoinsShuffler />);
 
@@ -24,10 +32,6 @@ describe("Coins Shuffler Keyboard", () => {
 
     // Verify move counter incremented.
     expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
-
-    // Press ArrowLeft to move back to S1 (now empty).
-    fireEvent.keyDown(window, { key: "ArrowLeft" });
-    expect(screen.getByText(/Ходы: 2/i)).toBeInTheDocument();
   });
 
   test("Mobile Keyboard Rotation (Level 1)", () => {
@@ -58,5 +62,19 @@ describe("Coins Shuffler Keyboard", () => {
     expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
     expect(screen.queryByTestId("coin-S1")).not.toBeInTheDocument();
     expect(screen.getByTestId("coin-S2")).toBeInTheDocument();
+  });
+
+  test("Keyboard selection shows move dots and they disappear after move", () => {
+    render(<CoinsShuffler />);
+
+    // Select S1 via keyboard
+    fireEvent.keyDown(window, { key: " " });
+    expect(screen.getByTestId("move-dot-S2")).toBeInTheDocument();
+
+    // Move using ArrowRight (desktop mapping)
+    fireEvent.keyDown(window, { key: "ArrowRight" });
+
+    expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
+    expect(screen.queryByTestId("move-dot-S2")).not.toBeInTheDocument();
   });
 });

@@ -27,7 +27,7 @@ export const CoinsShuffler: React.FC = () => {
     setSelectedSlot(null);
   }, [currentLevelConfig]);
 
-  const handleMove = useCallback(
+  const move = useCallback(
     (from: SlotId, to: SlotId) => {
       const newState = moveCoin(state, from, to);
       if (newState !== state) {
@@ -37,6 +37,31 @@ export const CoinsShuffler: React.FC = () => {
       return false;
     },
     [state]
+  );
+
+  const moveAndDeselect = useCallback(
+    (from: SlotId, to: SlotId) => {
+      const moved = move(from, to);
+      if (moved) {
+        setFocusedSlot(to);
+        setSelectedSlot(null); // dots disappear after move
+      }
+      return moved;
+    },
+    [move]
+  );
+
+  const handleSelectSlot = useCallback(
+    (slot: SlotId) => {
+      if (selectedSlot === slot) {
+        setSelectedSlot(null);
+        return;
+      }
+      if (!state.positions[slot]) return; // only select coins
+      setSelectedSlot(slot);
+      setFocusedSlot(slot);
+    },
+    [selectedSlot, state.positions]
   );
 
   const handleReset = () => {
@@ -112,10 +137,7 @@ export const CoinsShuffler: React.FC = () => {
       if (next) {
         e.preventDefault();
         if (selectedSlot) {
-          if (handleMove(selectedSlot, next)) {
-            setFocusedSlot(next);
-            setSelectedSlot(next);
-          }
+          moveAndDeselect(selectedSlot, next);
         } else {
           setFocusedSlot(next);
         }
@@ -128,7 +150,7 @@ export const CoinsShuffler: React.FC = () => {
     focusedSlot,
     selectedSlot,
     state,
-    handleMove,
+    moveAndDeselect,
     isMobile,
     currentLevelConfig,
   ]);
@@ -200,7 +222,8 @@ export const CoinsShuffler: React.FC = () => {
         <GameBoard
           levelConfig={currentLevelConfig}
           positions={state.positions}
-          onMove={handleMove}
+          onMove={moveAndDeselect}
+          onSelectSlot={handleSelectSlot}
           focusedSlot={focusedSlot}
           selectedSlot={selectedSlot}
           isMobile={isMobile}
