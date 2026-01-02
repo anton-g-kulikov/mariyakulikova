@@ -15,11 +15,25 @@ export const Home: React.FC = () => {
         alignItems: "center",
       }}
     >
-      <h1 style={{ fontSize: "48px", marginBottom: "40px", textShadow: "2px 2px #fbcfe8" }}>
+      <h1
+        style={{
+          fontSize: "48px",
+          marginBottom: "40px",
+          textShadow: "2px 2px #fbcfe8",
+        }}
+      >
         Маша и папа 💜
       </h1>
       <nav style={{ marginTop: "20px" }}>
-        <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: "20px" }}>
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
           <li>
             <Link
               to="/coins-shuffler"

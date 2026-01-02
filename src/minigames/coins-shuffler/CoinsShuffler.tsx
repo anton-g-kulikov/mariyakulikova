@@ -122,7 +122,13 @@ export const CoinsShuffler: React.FC = () => {
         fontFamily: "'Comic Sans MS', 'Chalkboard SE', 'cursive', sans-serif", // Playful font
       }}
     >
-      <h1 style={{ fontSize: "36px", marginBottom: "30px", textShadow: "2px 2px #fbcfe8" }}>
+      <h1
+        style={{
+          fontSize: "36px",
+          marginBottom: "30px",
+          textShadow: "2px 2px #fbcfe8",
+        }}
+      >
         Пятнашки с монетами
       </h1>
 
@@ -179,9 +185,15 @@ export const CoinsShuffler: React.FC = () => {
               boxShadow: "0 4px 0 #be185d",
               transition: "transform 0.1s",
             }}
-            onMouseDown={(e) => (e.currentTarget.style.transform = "translateY(4px)")}
-            onMouseUp={(e) => (e.currentTarget.style.transform = "translateY(0)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+            onMouseDown={(e) =>
+              (e.currentTarget.style.transform = "translateY(4px)")
+            }
+            onMouseUp={(e) =>
+              (e.currentTarget.style.transform = "translateY(0)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.transform = "translateY(0)")
+            }
           >
             Начать заново
           </button>
@@ -204,10 +216,14 @@ export const CoinsShuffler: React.FC = () => {
             zIndex: 100,
           }}
         >
-          <h2 style={{ fontSize: "48px", color: "#db2777", marginBottom: "20px" }}>
+          <h2
+            style={{ fontSize: "48px", color: "#db2777", marginBottom: "20px" }}
+          >
             🎉 Ура! Победа! 🎉
           </h2>
-          <p style={{ fontSize: "24px", color: "#4c1d95", marginBottom: "30px" }}>
+          <p
+            style={{ fontSize: "24px", color: "#4c1d95", marginBottom: "30px" }}
+          >
             Ты справилась за {state.moveCount} ходов!
           </p>
           <button
