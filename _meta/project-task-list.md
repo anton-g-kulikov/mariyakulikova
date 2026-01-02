@@ -50,6 +50,10 @@
 - [x] **CONFIG-TASK-003: Configure Vite for production** - ✅ **COMPLETED** - Set explicit base path for custom domain deployment
 - [x] **CONFIG-TASK-004: Set up Automated Deployment via GitHub Actions** - ✅ **COMPLETED** - Create workflow for building and deploying to GitHub Pages
 
+## SEO & Titles
+
+- [x] **DOC-TASK-004: Update document titles for RU localization** - ✅ **COMPLETED** - Set global HTML title to «Маша и папа» and per-route titles (home: «Маша и папа», coins shuffler: «Пятнашки с монетами»)
+
 ## Task Status Legend
 
 - 🟡 **IN PROGRESS** - Currently being worked on

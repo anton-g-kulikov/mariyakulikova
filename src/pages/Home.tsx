@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Home: React.FC = () => {
+  useEffect(() => {
+    document.title = "Маша и папа";
+  }, []);
+
   return (
     <div
       style={{

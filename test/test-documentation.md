@@ -116,6 +116,13 @@
 - **Expected**: `.github/workflows/deploy.yml` exists and contains build/deploy steps
 - **Test File**: N/A (Manual check)
 
+### SEO-TEST-001: Document titles localization
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify page titles are localized to Russian for home and Coins Shuffler routes
+- **Expected**: Home sets document.title to «Маша и папа»; Coins Shuffler sets document.title to «Пятнашки с монетами»; base HTML title matches «Маша и папа»
+- **Test File**: N/A (Manual/React Testing Library check)
+
 ### SHUFFLE-TEST-011: Focus and Locked Border Colors
 
 - **Status**: ✅ COMPLETED

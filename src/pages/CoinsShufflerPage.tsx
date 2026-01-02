@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CoinsShuffler } from "../minigames/coins-shuffler/CoinsShuffler";
 
 export const CoinsShufflerPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Пятнашки с монетами";
+  }, []);
+
   return (
     <div style={{ backgroundColor: "#fdf2f8", minHeight: "100vh" }}>
       <div style={{ padding: "15px 20px" }}>
