@@ -50,17 +50,17 @@ jest.mock("framer-motion", () => {
 });
 
 describe("Touch Drag Sensitivity", () => {
-  test("should trigger move when dragged 16 units (less than 20)", () => {
+  test("should trigger move when dragged 10 units (very sensitive)", () => {
     render(<CoinsShuffler />);
 
     // L2 is at (50, 130). C1 is at (130, 130).
     // C1 is empty initially.
-    // Dragging L2 coin by x=16 puts it at (66, 130).
-    // Distance to C1 is 130 - 66 = 64.
-    // Our threshold is 65. 64 < 65, so it should move.
+    // Dragging L2 coin by x=10 puts it at (60, 130).
+    // Distance to C1 is 130 - 60 = 70.
+    // Our threshold is 72. 70 < 72, so it should move.
 
     const coin = screen.getByTestId("coin-L2");
-    (coin as any)._testOffset = { x: 16, y: 0 };
+    (coin as any)._testOffset = { x: 10, y: 0 };
 
     // Use fireEvent.click to trigger the mocked onDragEnd
     fireEvent.click(coin);

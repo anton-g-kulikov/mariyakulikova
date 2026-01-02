@@ -83,9 +83,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       }
     });
 
-    // Trigger movement if we are within 65 units of another slot
-    // (Since slots are 80 units apart, this means after ~15 units of drag)
-    if (nearestSlot && minDistance < 65) {
+    // Trigger movement if we are within 72 units of another slot
+    // (Since slots are 80 units apart, this means after ~8 units of drag)
+    if (nearestSlot && minDistance < 72) {
       onMove(from, nearestSlot);
     }
   };
@@ -110,12 +110,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         }}
       >
         {/* Board Outline */}
-        <path
-          d={boardPath}
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2"
-        />
+        <path d={boardPath} fill="none" stroke="#fff" strokeWidth="2" />
 
         {/* Slots */}
         {(Object.keys(slotCoords) as SlotId[]).map((id) => (

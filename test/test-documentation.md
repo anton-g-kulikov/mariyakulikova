@@ -139,7 +139,7 @@
 
 - **Status**: ✅ COMPLETED
 - **Description**: Verify that drag threshold is relaxed to allow easier movement
-- **Expected**: Dragging 16 units (out of 100) triggers a move
+- **Expected**: Dragging 10 units (out of 80) triggers a move
 - **Test File**: `test/integration/touch-drag.test.tsx`
 
 ### SHUFFLE-TEST-017: Visual Slot Sizing
