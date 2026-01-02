@@ -122,7 +122,7 @@ export const CoinsShuffler: React.FC = () => {
         fontFamily: "sans-serif",
       }}
     >
-      <h1>Coins Shuffler</h1>
+      <h1>Пятнашки с монетами</h1>
 
       <div
         style={{
@@ -149,7 +149,7 @@ export const CoinsShuffler: React.FC = () => {
           }}
         >
           <div style={{ fontSize: "24px", fontWeight: "bold" }}>
-            Moves: {state.moveCount}
+            Ходы: {state.moveCount}
           </div>
           <Legend />
           <button
@@ -164,7 +164,7 @@ export const CoinsShuffler: React.FC = () => {
               borderRadius: "4px",
             }}
           >
-            Reset Game
+            Начать заново
           </button>
         </div>
       </div>
@@ -185,11 +185,9 @@ export const CoinsShuffler: React.FC = () => {
             zIndex: 100,
           }}
         >
-          <h2 style={{ fontSize: "48px", color: "#4caf50" }}>
-            Congratulations!
-          </h2>
+          <h2 style={{ fontSize: "48px", color: "#4caf50" }}>Поздравляем!</h2>
           <p style={{ fontSize: "24px" }}>
-            You finished in {state.moveCount} moves.
+            Вы закончили за {state.moveCount} ходов.
           </p>
           <button
             onClick={handleReset}
@@ -203,7 +201,7 @@ export const CoinsShuffler: React.FC = () => {
               borderRadius: "8px",
             }}
           >
-            Play Again
+            Играть снова
           </button>
         </div>
       )}

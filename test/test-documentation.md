@@ -156,6 +156,13 @@
 - **Expected**: Drag offset {x:0, y:25} triggers move from L2 to C1 (which is visually below L2 in mobile layout)
 - **Test File**: `test/integration/touch-drag.test.tsx`
 
+### SHUFFLE-TEST-019: Russian Translation
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that all UI elements and aria-labels are in Russian
+- **Expected**: "Ходы", "Правила", "Начать заново" and other strings are correctly displayed
+- **Test File**: `test/integration/shuffle-ui.test.tsx`, `test/integration/touch-drag.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality

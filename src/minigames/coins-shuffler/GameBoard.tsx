@@ -149,7 +149,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 key={id}
                 data-testid={`coin-${id}`}
                 role="img"
-                aria-label={`${color} coin at ${id}`}
+                aria-label={`${
+                  color === "blue" ? "синяя" : "зеленая"
+                } монета в ${id}`}
                 cx={slotCoords[id].x}
                 cy={slotCoords[id].y}
                 r="35"

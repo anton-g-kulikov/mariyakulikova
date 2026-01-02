@@ -66,7 +66,7 @@ describe("Touch Drag Sensitivity", () => {
     fireEvent.click(coin);
 
     // Check if move counter increased
-    expect(screen.getByText(/Moves: 1/)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 1/)).toBeInTheDocument();
 
     // Check if L2 is now empty and C1 has the coin
     expect(screen.queryByTestId("coin-L2")).not.toBeInTheDocument();
@@ -96,7 +96,7 @@ describe("Touch Drag Sensitivity", () => {
     fireEvent.click(coin);
 
     // Check if move counter increased
-    expect(screen.getByText(/Moves: 1/)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 1/)).toBeInTheDocument();
 
     // Check if L2 is now empty and C1 has the coin
     expect(screen.queryByTestId("coin-L2")).not.toBeInTheDocument();

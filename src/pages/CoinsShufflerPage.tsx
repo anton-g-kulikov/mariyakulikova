@@ -6,7 +6,9 @@ export const CoinsShufflerPage: React.FC = () => {
   return (
     <div>
       <div style={{ padding: "10px", backgroundColor: "#111" }}>
-        <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>← Back to Home</Link>
+        <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+          ← На главную
+        </Link>
       </div>
       <CoinsShuffler />
     </div>

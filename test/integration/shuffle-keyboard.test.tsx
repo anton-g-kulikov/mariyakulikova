@@ -25,11 +25,11 @@ describe("Coins Shuffler Keyboard", () => {
     fireEvent.keyDown(window, { key: "ArrowRight" });
 
     // Verify move counter incremented
-    expect(screen.getByText(/Moves: 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
 
     // Press ArrowRight again to move to C2 (should still be locked)
     fireEvent.keyDown(window, { key: "ArrowRight" });
-    expect(screen.getByText(/Moves: 2/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 2/i)).toBeInTheDocument();
   });
 
   test("Mobile Keyboard Rotation", () => {
@@ -57,7 +57,7 @@ describe("Coins Shuffler Keyboard", () => {
     fireEvent.keyDown(window, { key: " " }); // Lock L2
     fireEvent.keyDown(window, { key: "ArrowDown" }); // Move to C1
 
-    expect(screen.getByText(/Moves: 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
     expect(screen.queryByTestId("coin-L2")).not.toBeInTheDocument();
     expect(screen.getByTestId("coin-C1")).toBeInTheDocument();
   });

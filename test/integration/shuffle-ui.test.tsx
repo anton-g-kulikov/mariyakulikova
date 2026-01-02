@@ -6,16 +6,16 @@ import { CoinsShuffler } from "../../src/minigames/coins-shuffler/CoinsShuffler"
 describe("Coins Shuffler UI", () => {
   test("SHUFFLE-TEST-009: Legend Visibility", () => {
     render(<CoinsShuffler />);
-    expect(screen.getByText(/Rules/i)).toBeInTheDocument();
-    expect(screen.getByText(/Controls/i)).toBeInTheDocument();
+    expect(screen.getByText(/Правила/i)).toBeInTheDocument();
+    expect(screen.getByText(/Управление/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/Switch the blue and green coins/i)
+      screen.getByText(/Поменяй местами синие и зеленые монеты/i)
     ).toBeInTheDocument();
   });
 
   test("Initial Move Counter is 0", () => {
     render(<CoinsShuffler />);
-    expect(screen.getByText(/Moves: 0/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 0/i)).toBeInTheDocument();
   });
 
   test("Board renders all slots", () => {
@@ -32,14 +32,14 @@ describe("Coins Shuffler UI", () => {
     fireEvent.keyDown(window, { key: " " }); // Lock L2
     fireEvent.keyDown(window, { key: "ArrowRight" }); // Move to C1
 
-    expect(screen.getByText(/Moves: 1/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
 
     // Click Reset
-    const resetButton = screen.getByRole("button", { name: /Reset Game/i });
+    const resetButton = screen.getByRole("button", { name: /Начать заново/i });
     fireEvent.click(resetButton);
 
     // Verify moves reset to 0
-    expect(screen.getByText(/Moves: 0/i)).toBeInTheDocument();
+    expect(screen.getByText(/Ходы: 0/i)).toBeInTheDocument();
   });
 
   test("SHUFFLE-TEST-014: Mobile Rotation", () => {
@@ -54,7 +54,7 @@ describe("Coins Shuffler UI", () => {
 
     // The SVG should have swapped dimensions (260x420) instead of rotation
     const svg = screen
-      .getByRole("img", { name: /blue coin at L1/i })
+      .getByRole("img", { name: /синяя монета в L1/i })
       .closest("svg");
     expect(svg).toHaveAttribute("width", "260");
     expect(svg).toHaveAttribute("height", "420");

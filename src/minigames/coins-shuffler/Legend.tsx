@@ -13,20 +13,18 @@ export const Legend: React.FC = () => {
         lineHeight: "1.6",
       }}
     >
-      <h3 style={{ marginTop: 0 }}>Rules</h3>
-      <p>Switch the blue and green coins by sliding them inside the board.</p>
+      <h3 style={{ marginTop: 0 }}>Правила</h3>
+      <p>Поменяй местами синие и зеленые монеты, перемещая их по полю.</p>
 
-      <h3>Controls</h3>
+      <h3>Управление</h3>
       <ul style={{ paddingLeft: "20px" }}>
+        <li>Перетащи монету в соседний пустой слот.</li>
         <li>
-          <strong>Touch/Mouse:</strong> Drag a coin to an adjacent empty slot.
-        </li>
-        <li>
-          <strong>Keyboard:</strong>
+          <strong>Клавиатура:</strong>
           <ul style={{ paddingLeft: "15px" }}>
-            <li>Arrow keys to move focus.</li>
-            <li>Space/Enter to lock/unlock a coin.</li>
-            <li>Arrow keys to move a locked coin.</li>
+            <li>Стрелки для перемещения фокуса.</li>
+            <li>Пробел/Enter для выбора/отмены выбора монеты.</li>
+            <li>Стрелки для перемещения выбранной монеты.</li>
           </ul>
         </li>
       </ul>
