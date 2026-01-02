@@ -142,6 +142,13 @@
 - **Expected**: Dragging 16 units (out of 100) triggers a move
 - **Test File**: `test/integration/touch-drag.test.tsx`
 
+### SHUFFLE-TEST-017: Visual Slot Sizing
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that slots are rendered as individual 80x80 boxes
+- **Expected**: SVG contains rects with width=80, height=80 for each slot, and no complex path outline
+- **Test File**: N/A (Visual/Code Verification)
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality

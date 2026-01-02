@@ -22,6 +22,7 @@
 - [x] **SHUFFLE-TASK-012: Implement mobile rotation** - ✅ **COMPLETED** - Rotate game field 90 degrees on devices with width < 480px
 - [x] **SHUFFLE-TASK-013: Fix touch and keyboard mapping for rotated board** - ✅ **COMPLETED** - Ensure actions match visual orientation on mobile
 - [x] **SHUFFLE-TASK-014: Tune touch sensitivity** - ✅ **COMPLETED** - Relax drag threshold to 15 units (85 distance) for easier interaction <!-- id: 14 -->
+- [x] **SHUFFLE-TASK-015: Adjust slot visual size** - ✅ **COMPLETED** - Ensure visual slot borders match the 80x80 focus box size exactly
 
 ## Task Status Legend
 

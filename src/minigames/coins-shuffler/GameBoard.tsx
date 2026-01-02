@@ -89,14 +89,6 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           flexShrink: 0,
         }}
       >
-        {/* Board Outline */}
-        <path
-          d="M 10,10 H 90 V 110 H 210 V 10 H 290 V 110 H 410 V 10 H 490 V 290 H 410 V 190 H 90 V 290 H 10 Z"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="2"
-        />
-
         {/* Slots */}
         {(Object.keys(SLOT_COORDS) as SlotId[]).map((id) => (
           <g key={id}>
@@ -107,8 +99,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
               width="80"
               height="80"
               fill="transparent"
-              stroke={focusedSlot === id ? "#ffeb3b" : "transparent"}
-              strokeWidth={focusedSlot === id ? "2" : "0"}
+              stroke={focusedSlot === id ? "#ffeb3b" : "#fff"}
+              strokeWidth="2"
             />
             {selectedSlot === id && (
               <rect
