@@ -145,8 +145,8 @@
 ### SHUFFLE-TEST-017: Visual Slot Sizing
 
 - **Status**: ✅ COMPLETED
-- **Description**: Verify that slots are rendered as individual 80x80 boxes
-- **Expected**: SVG contains rects with width=80, height=80 for each slot, and no complex path outline
+- **Description**: Verify that board is rendered with a connected outline
+- **Expected**: SVG contains the path element defining the board shape
 - **Test File**: N/A (Visual/Code Verification)
 
 ## Test Coverage Goals
