@@ -100,6 +100,22 @@
 - **Expected**: Clicking reset sets moves to 0 and restores initial coin positions
 - **Test File**: `test/integration/shuffle-ui.test.tsx`
 
+## Deployment Test Cases
+
+### CONFIG-TEST-003: Verify Vite Base Path
+
+- **Status**: ✅ COMPLETED
+- **Description**: Ensure `vite.config.ts` has the correct base path for custom domain
+- **Expected**: `base: "/"` is present in the config
+- **Test File**: N/A (Manual check)
+
+### CONFIG-TEST-004: Verify GitHub Actions Workflow
+
+- **Status**: ✅ COMPLETED
+- **Description**: Ensure the deployment workflow is correctly configured
+- **Expected**: `.github/workflows/deploy.yml` exists and contains build/deploy steps
+- **Test File**: N/A (Manual check)
+
 ### SHUFFLE-TEST-011: Focus and Locked Border Colors
 
 - **Status**: ✅ COMPLETED

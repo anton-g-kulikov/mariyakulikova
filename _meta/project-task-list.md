@@ -34,6 +34,11 @@
 - [x] **CORE-TASK-002: Move static assets to public folder** - ✅ **COMPLETED** - Moved august2025 presentation to public folder for static serving
 - [x] **CONFIG-TASK-002: Fix TypeScript emit configuration** - ✅ **COMPLETED** - Set noEmit to true and cleaned up generated .js files to prevent duplication
 
+## Deployment & CI/CD
+
+- [x] **CONFIG-TASK-003: Configure Vite for production** - ✅ **COMPLETED** - Set explicit base path for custom domain deployment
+- [x] **CONFIG-TASK-004: Set up Automated Deployment via GitHub Actions** - ✅ **COMPLETED** - Create workflow for building and deploying to GitHub Pages
+
 ## Task Status Legend
 
 - 🟡 **IN PROGRESS** - Currently being worked on

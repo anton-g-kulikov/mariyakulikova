@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Automated Deployment**: GitHub Actions workflow for automatic build and deployment to GitHub Pages.
 - **Coins Shuffler Mini-Game**: A web-based, mobile-friendly puzzle game.
   - H-shaped board logic with 10 slots and 6 coins.
   - SVG-based game board with smooth animations.
