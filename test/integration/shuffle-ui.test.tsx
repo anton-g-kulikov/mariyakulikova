@@ -65,6 +65,22 @@ describe("Coins Shuffler UI", () => {
     expect(screen.getByText(/Ходы: 0/i)).toBeInTheDocument();
   });
 
+  test("SHUFFLE-TEST-025: Move dot has enlarged hit area", () => {
+    render(<CoinsShuffler />);
+
+    // Select the initial blue coin on Level 1 to show move dots
+    const coinS1 = screen.getByLabelText(/синяя монета в S1/i);
+    fireEvent.click(coinS1);
+
+    const enlargedHit = screen.getByTestId("move-dot-hit-S2");
+    expect(enlargedHit).toBeInTheDocument();
+    expect(enlargedHit).toHaveAttribute("r", "33");
+
+    // Clicking the enlarged hit target should perform the move and increment counter
+    fireEvent.click(enlargedHit);
+    expect(screen.getByText(/Ходы: 1/i)).toBeInTheDocument();
+  });
+
   test("SHUFFLE-TEST-014: Mobile Rotation (Level 1)", () => {
     // Mock window.innerWidth
     Object.defineProperty(window, "innerWidth", {

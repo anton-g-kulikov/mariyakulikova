@@ -35,6 +35,10 @@
 
 - [x] **SHUFFLE-TASK-023: Fix focus vs selection stroke widths** - ✅ **COMPLETED** - Swap stroke widths so selection (locked-in) is 6px and focus is 3px
 
+- [x] **SHUFFLE-TASK-024: Expand move-dot hit area** - ✅ **COMPLETED** - Enlarge the interactive target for move dots so taps/clicks are easier without changing visual dot size
+
+- [x] **SHUFFLE-TASK-025: Increase move-dot hit radius to 33px** - ✅ **COMPLETED** - Further expand the invisible target circle for move dots from 22px to 33px radius to improve tapability
+
 ## Project Structure & Navigation
 
 - [x] **CORE-TASK-001: Implement routing and landing page** - ✅ **COMPLETED** - Set up react-router-dom, created Home page with links, and moved Coins Shuffler to its own route

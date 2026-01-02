@@ -119,18 +119,30 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         {selectedSlot &&
           selectedColor &&
           availableTargets.map((target) => (
-            <circle
+            <g
               key={`dot-${target}`}
-              data-testid={`move-dot-${target}`}
-              cx={slotCoords[target].x}
-              cy={slotCoords[target].y}
-              r="10"
-              fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
-              stroke="#fff"
-              strokeWidth="3"
               onClick={() => onMove(selectedSlot, target)}
               style={{ cursor: "pointer" }}
-            />
+            >
+              <circle
+                data-testid={`move-dot-hit-${target}`}
+                cx={slotCoords[target].x}
+                cy={slotCoords[target].y}
+                r="33"
+                fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
+                fillOpacity="0.001"
+                stroke="none"
+              />
+              <circle
+                data-testid={`move-dot-${target}`}
+                cx={slotCoords[target].x}
+                cy={slotCoords[target].y}
+                r="10"
+                fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
+                stroke="#fff"
+                strokeWidth="3"
+              />
+            </g>
           ))}
       </svg>
     </div>

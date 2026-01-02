@@ -221,6 +221,13 @@
 - **Expected**: Level selection buttons work; board renders correct number of slots and coins for each level; win condition is level-specific
 - **Test File**: `test/integration/shuffle-ui.test.tsx`, `test/unit/shuffle-logic.test.ts`
 
+### SHUFFLE-TEST-025: Enlarged move-dot hit area
+
+- **Status**: ✅ COMPLETED
+- **Description**: Ensure move dots remain visually small but expose a larger invisible hit zone so taps/clicks are easier
+- **Expected**: Each move dot renders an expanded hit target (e.g., r≥33px) that triggers the move when clicked/tapped
+- **Test File**: `test/integration/shuffle-ui.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality
