@@ -13,6 +13,7 @@ A collection of mini-projects for Masha.
 - `src/`: Source code for the applications.
 - `minigames/`: Collection of small interactive games.
   - **Coins Shuffler**: A puzzle game where you swap blue and green coins.
+  - **Memory Grid**: A memory-based number sequencing game
 - `august2025/`: Presentation and image assets.
 - `_meta/`: Project management and system documentation.
 - `test/`: Test documentation and test files.
