@@ -3,6 +3,8 @@ import { getInitialState, moveCoin } from "./logic";
 import { GameBoard } from "./GameBoard";
 import { Legend } from "./Legend";
 import { LEVELS, SlotId } from "./levels";
+import { PageContainer, Heading, Button, Card } from "../../components";
+import { theme } from "../../theme";
 
 export const CoinsShuffler: React.FC = () => {
   const [state, setState] = useState(getInitialState(1));
@@ -156,31 +158,9 @@ export const CoinsShuffler: React.FC = () => {
   ]);
 
   return (
-    <div
-      className="coins-shuffler"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "20px",
-        backgroundColor: "#fdf2f8",
-        color: "#4c1d95",
-        minHeight: "100vh",
-        fontFamily: "'Comic Sans MS', 'Chalkboard SE', 'cursive', sans-serif",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "36px",
-          marginBottom: "10px",
-          textShadow: "2px 2px #fbcfe8",
-        }}
-      >
-        Пятнашки с монетами
-      </h1>
-      <h2 style={{ fontSize: "24px", marginBottom: "20px", color: "#db2777" }}>
-        {currentLevelConfig.name}
-      </h2>
+    <PageContainer className="coins-shuffler">
+      <Heading>Пятнашки с монетами</Heading>
+      <Heading level={2}>{currentLevelConfig.name}</Heading>
 
       <div
         style={{
@@ -192,22 +172,17 @@ export const CoinsShuffler: React.FC = () => {
         }}
       >
         {LEVELS.map((l) => (
-          <button
+          <Button
             key={l.id}
             onClick={() => handleLevelSelect(l.id)}
+            variant={state.levelId === l.id ? "primary" : "secondary"}
             style={{
               padding: "8px 16px",
-              borderRadius: "20px",
-              border: "none",
-              backgroundColor: state.levelId === l.id ? "#db2777" : "#fbcfe8",
-              color: state.levelId === l.id ? "#fff" : "#4c1d95",
-              cursor: "pointer",
-              fontWeight: "bold",
-              boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+              fontSize: "16px",
             }}
           >
             Уровень {l.id}
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -237,47 +212,17 @@ export const CoinsShuffler: React.FC = () => {
             maxWidth: "300px",
           }}
         >
-          <div
+          <Card
             style={{
               fontSize: "28px",
               fontWeight: "bold",
-              backgroundColor: "#fff",
-              padding: "10px 20px",
-              borderRadius: "15px",
-              border: "3px solid #fbcfe8",
               textAlign: "center",
-              boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
             }}
           >
             Ходы: {state.moveCount}
-          </div>
+          </Card>
           <Legend />
-          <button
-            onClick={handleReset}
-            style={{
-              padding: "15px 30px",
-              fontSize: "20px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              backgroundColor: "#ec4899",
-              color: "#fff",
-              border: "none",
-              borderRadius: "30px",
-              boxShadow: "0 4px 0 #be185d",
-              transition: "transform 0.1s",
-            }}
-            onMouseDown={(e) =>
-              (e.currentTarget.style.transform = "translateY(4px)")
-            }
-            onMouseUp={(e) =>
-              (e.currentTarget.style.transform = "translateY(0)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "translateY(0)")
-            }
-          >
-            Начать заново
-          </button>
+          <Button onClick={handleReset}>Начать заново</Button>
         </div>
       </div>
 
@@ -289,7 +234,7 @@ export const CoinsShuffler: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(253, 242, 248, 0.9)",
+            backgroundColor: theme.colors.backgroundSemiTransparent,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -297,54 +242,30 @@ export const CoinsShuffler: React.FC = () => {
             zIndex: 100,
           }}
         >
-          <h2
-            style={{ fontSize: "48px", color: "#db2777", marginBottom: "20px" }}
-          >
+          <Heading level={2} style={{ fontSize: "48px" }}>
             🎉 Ура! Победа! 🎉
-          </h2>
+          </Heading>
           <p
-            style={{ fontSize: "24px", color: "#4c1d95", marginBottom: "30px" }}
+            style={{
+              fontSize: "24px",
+              color: theme.colors.text,
+              marginBottom: "30px",
+            }}
           >
             Ты справилась за {state.moveCount} ходов!
           </p>
           <div style={{ display: "flex", gap: "20px" }}>
-            <button
-              onClick={handleReset}
-              style={{
-                padding: "20px 40px",
-                fontSize: "24px",
-                fontWeight: "bold",
-                cursor: "pointer",
-                backgroundColor: "#ec4899",
-                color: "#fff",
-                border: "none",
-                borderRadius: "40px",
-                boxShadow: "0 6px 0 #be185d",
-              }}
-            >
+            <Button onClick={handleReset} size="lg">
               Еще раз
-            </button>
+            </Button>
             {state.levelId < LEVELS.length && (
-              <button
-                onClick={handleNextLevel}
-                style={{
-                  padding: "20px 40px",
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  backgroundColor: "#84cc16",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "40px",
-                  boxShadow: "0 6px 0 #65a30d",
-                }}
-              >
+              <Button onClick={handleNextLevel} size="lg" variant="secondary">
                 Дальше! ➡️
-              </button>
+              </Button>
             )}
           </div>
         </div>
       )}
-    </div>
+    </PageContainer>
   );
 };

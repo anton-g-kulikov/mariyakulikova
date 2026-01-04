@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Russian localization and "Masha and Papa" theme.
   - Level 1 adjusted to 4x4 grid for easier start.
   - Visual feedback: Correct sequence numbers turn green, out-of-order numbers turn orange.
+  - Added "На главную" navigation link to the Memory Grid page.
 
 ### Added
 

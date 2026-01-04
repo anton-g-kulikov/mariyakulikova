@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { PageContainer, Heading, Button } from "../components";
 
 export const Home: React.FC = () => {
   useEffect(() => {
@@ -7,27 +8,8 @@ export const Home: React.FC = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        padding: "40px",
-        fontFamily: "'Comic Sans MS', 'Chalkboard SE', 'cursive', sans-serif",
-        backgroundColor: "#fdf2f8",
-        color: "#4c1d95",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontSize: "48px",
-          marginBottom: "40px",
-          textShadow: "2px 2px #fbcfe8",
-        }}
-      >
-        Маша и папа 💜
-      </h1>
+    <PageContainer>
+      <Heading>Маша и папа 💜</Heading>
       <nav style={{ marginTop: "20px" }}>
         <ul
           style={{
@@ -39,43 +21,39 @@ export const Home: React.FC = () => {
           }}
         >
           <li>
-            <Link
+            <Button
+              as={Link}
               to="/coins-shuffler"
-              style={{
-                display: "block",
-                padding: "20px 40px",
-                backgroundColor: "#ec4899",
-                color: "#fff",
-                fontSize: "24px",
-                textDecoration: "none",
-                borderRadius: "20px",
-                boxShadow: "0 4px 0 #be185d",
-                textAlign: "center",
-              }}
+              size="lg"
+              style={{ display: "block", width: "100%" }}
             >
               🎮 Головоломка
-            </Link>
+            </Button>
           </li>
           <li>
-            <a
+            <Button
+              as={Link}
+              to="/memory-grid"
+              size="lg"
+              variant="secondary"
+              style={{ display: "block", width: "100%" }}
+            >
+              🧠 Запоминалка
+            </Button>
+          </li>
+          <li>
+            <Button
+              as="a"
               href="/august2025/presentation.html"
-              style={{
-                display: "block",
-                padding: "20px 40px",
-                backgroundColor: "#84cc16",
-                color: "#fff",
-                fontSize: "24px",
-                textDecoration: "none",
-                borderRadius: "20px",
-                boxShadow: "0 4px 0 #65a30d",
-                textAlign: "center",
-              }}
+              variant="secondary"
+              size="lg"
+              style={{ display: "block", width: "100%" }}
             >
               🎞️ Август 2025
-            </a>
+            </Button>
           </li>
         </ul>
       </nav>
-    </div>
+    </PageContainer>
   );
 };

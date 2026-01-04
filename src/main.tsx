@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { CoinsShufflerPage } from "./pages/CoinsShufflerPage";
+import { MemoryGridPage } from "./pages/MemoryGridPage";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -11,6 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/coins-shuffler" element={<CoinsShufflerPage />} />
+        <Route path="/memory-grid" element={<MemoryGridPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

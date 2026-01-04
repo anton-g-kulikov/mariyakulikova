@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { CoinColor } from "./logic";
 import { LevelConfig, SlotId } from "./levels";
+import { theme } from "../../theme";
 
 interface GameBoardProps {
   levelConfig: LevelConfig;
@@ -63,7 +64,12 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         }}
       >
         {/* Board Outline */}
-        <path d={boardPath} fill="#fff" stroke="#db2777" strokeWidth="4" />
+        <path
+          d={boardPath}
+          fill={theme.colors.white}
+          stroke={theme.colors.heading}
+          strokeWidth="4"
+        />
 
         {/* Slots */}
         {(Object.keys(slotCoords) as SlotId[]).map((id) => (
@@ -77,7 +83,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
               fill="transparent"
               stroke={
                 focusedSlot === id || selectedSlot === id
-                  ? "#facc15"
+                  ? theme.colors.focus
                   : "transparent"
               }
               strokeWidth={
@@ -103,8 +109,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 cx={slotCoords[id].x}
                 cy={slotCoords[id].y}
                 r="35"
-                fill={color === "blue" ? "#06b6d4" : "#84cc16"}
-                stroke="#fff"
+                fill={color === "blue" ? theme.colors.blue : theme.colors.green}
+                stroke={theme.colors.white}
                 strokeWidth="3"
                 onClick={() => onSelectSlot(id)}
                 whileHover={{ scale: 1.1 }}
@@ -129,7 +135,11 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 cx={slotCoords[target].x}
                 cy={slotCoords[target].y}
                 r="33"
-                fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
+                fill={
+                  selectedColor === "blue"
+                    ? theme.colors.blue
+                    : theme.colors.green
+                }
                 fillOpacity="0.001"
                 stroke="none"
               />
@@ -138,8 +148,12 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 cx={slotCoords[target].x}
                 cy={slotCoords[target].y}
                 r="10"
-                fill={selectedColor === "blue" ? "#06b6d4" : "#84cc16"}
-                stroke="#fff"
+                fill={
+                  selectedColor === "blue"
+                    ? theme.colors.blue
+                    : theme.colors.green
+                }
+                stroke={theme.colors.white}
                 strokeWidth="3"
               />
             </g>

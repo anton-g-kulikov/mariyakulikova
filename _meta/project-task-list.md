@@ -1,4 +1,4 @@
-# mariyakulikova Project Task List
+# mashakulikova Project Task List
 
 ## Current Tasks
 
@@ -43,6 +43,21 @@
 
 - [x] **UI-TASK-001: Restore page scroll while keeping drag/tap playable** - ✅ **COMPLETED** - Allow vertical page scrolling again (after drag controls removal) while preserving game usability; prevent horizontal overflow
 - [x] **UI-TASK-002: Add home nav to August 2025 presentation** - ✅ **COMPLETED** - Add a fixed "На главную" navigation link to the August 2025 presentation for returning to the main page
+- [x] **UI-TASK-003: Define design system theme and constants** - ✅ **COMPLETED** - Centralize colors, typography, and spacing into a theme configuration
+- [x] **UI-TASK-004: Implement shared UI components** - ✅ **COMPLETED** - Create reusable Button, Heading, PageContainer, and Card components
+- [x] **UI-TASK-005: Refactor Home page to use shared components** - ✅ **COMPLETED** - Update Home.tsx to use the new design system components
+- [x] **UI-TASK-006: Refactor Coins Shuffler to use shared components** - ✅ **COMPLETED** - Update CoinsShuffler and sub-components to use the new design system components
+- [x] **CONFIG-TASK-005: Update project name to mashakulikova** - ✅ **COMPLETED** - Update all references from mariyakulikova to mashakulikova after repo rename
+
+## Memory Grid Mini-Game
+
+- [x] **MEMORY-TASK-001: Define level configurations and game logic** - ✅ **COMPLETED** - Define grid sizes (4x4 for L1, 5x5 for others), number counts, and state management logic
+- [x] **MEMORY-TASK-002: Implement GridBoard and Cell components** - ✅ **COMPLETED** - Create the visual representation of the memory grid
+- [x] **MEMORY-TASK-003: Implement memorization timer and recall stopwatch** - ✅ **COMPLETED** - Add timing mechanics for both phases
+- [x] **MEMORY-TASK-004: Implement lives (hearts) system and failure logic** - ✅ **COMPLETED** - Track mistakes (empty slots only) and handle game over state
+- [x] **MEMORY-TASK-005: Add win/loss screens and level progression** - ✅ **COMPLETED** - Show results with 1s delay and allow moving to next levels
+- [x] **MEMORY-TASK-007: Implement scoring and auto-advance logic** - ✅ **COMPLETED** - Add +5/+1 scoring and skip revealed numbers in sequence
+- [x] **MEMORY-TASK-006: Integrate into main navigation and localization** - ✅ **COMPLETED** - Add route, Russian translations, and "На главную" link
 
 ## Project Structure & Navigation
 

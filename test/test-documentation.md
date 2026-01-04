@@ -1,4 +1,4 @@
-# mariyakulikova Test Documentation
+# mashakulikova Test Documentation
 
 ## Test Framework Configuration
 
@@ -99,6 +99,50 @@
 - **Description**: Verify that the reset button clears the game state and move counter
 - **Expected**: Clicking reset sets moves to 0 and restores initial coin positions
 - **Test File**: `test/integration/shuffle-ui.test.tsx`
+
+## Memory Grid Test Cases
+
+### MEMORY-TEST-001: Grid Generation
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the grid is generated with the correct dimensions and number of items
+- **Expected**: Grid has correct size (e.g., 5x5) and exactly N unique numbers placed randomly
+- **Test File**: `test/unit/memory-logic.test.ts`
+
+### MEMORY-TEST-002: State Transitions (Memorize -> Recall)
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the game transitions from memorization to recall phase after the timer ends
+- **Expected**: `phase` changes from 'memorizing' to 'recalling' and numbers are hidden
+- **Test File**: `test/unit/memory-logic.test.ts`
+
+### MEMORY-TEST-003: Correct Sequence Selection
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that clicking the correct next number in sequence works
+- **Expected**: Cell is revealed, `currentExpectedNumber` increments
+- **Test File**: `test/unit/memory-logic.test.ts`
+
+### MEMORY-TEST-004: Incorrect Selection and Lives
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that clicking an incorrect cell reduces lives
+- **Expected**: Lives decrease by 1; if lives reach 0, game state becomes 'lost'
+- **Test File**: `test/unit/memory-logic.test.ts`
+
+### MEMORY-TEST-005: Win Condition
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that selecting all numbers in order results in a win
+- **Expected**: Game state becomes 'won' after the last number is correctly selected
+- **Test File**: `test/unit/memory-logic.test.ts`
+
+### MEMORY-TEST-006: Timer and Stopwatch
+
+- **Status**: 📋 NOT STARTED
+- **Description**: Verify that the countdown timer and recall stopwatch work correctly
+- **Expected**: Countdown decreases during memorization; stopwatch increases during recall
+- **Test File**: `test/integration/memory-ui.test.tsx`
 
 ## Deployment Test Cases
 
@@ -243,6 +287,29 @@
 | UI-INT-002   | Horizontal overflow stays hidden after layout change                  | Integration | Not Started |
 | UI-INT-003   | Tap-to-select interactions still work with scrolling enabled          | Integration | Not Started |
 | UI-INT-004   | August 2025 presentation shows "На главную" link that returns to home | Integration | Not Started |
+
+## Shared UI Components Test Cases
+
+### UI-TEST-001: Button Component
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the shared Button component renders correctly and handles clicks
+- **Expected**: Button displays text, applies theme styles, and triggers onClick handler
+- **Test File**: `test/unit/components/Button.test.tsx`
+
+### UI-TEST-002: Heading Component
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the shared Heading component renders with correct styles
+- **Expected**: Heading displays text with the defined text-shadow and font
+- **Test File**: `test/unit/components/Heading.test.tsx`
+
+### UI-TEST-003: PageContainer Component
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the PageContainer provides the correct layout and background
+- **Expected**: Renders children within a styled div with theme background and font
+- **Test File**: `test/unit/components/PageContainer.test.tsx`
 
 ## Test Coverage Goals
 
