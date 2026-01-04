@@ -1,4 +1,4 @@
-# mariyakulikova - Agent Instructions for Codex
+# mashakulikova - Agent Instructions for Codex
 
 This file provides system instructions for Codex/OpenAI-compatible agents to ensure consistent development practices and workflow adherence.
 

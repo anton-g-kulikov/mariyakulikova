@@ -1,10 +1,10 @@
-# mariyakulikova - Style Guide for Gemini Code Assist
+# mashakulikova - Style Guide for Gemini Code Assist
 
 This configuration provides development guidelines for Gemini Code Assist to ensure consistent coding practices and workflow adherence.
 
 ## Project Configuration
 
-**Project:** mariyakulikova  
+**Project:** mashakulikova  
 **Description:** A collection of mini-projects for Masha
 **Tech Stack:** React, TypeScript, Jest, Vite
 **Environment:** IDE development

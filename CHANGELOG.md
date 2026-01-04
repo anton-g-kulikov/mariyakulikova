@@ -9,6 +9,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- New minigame: **Sequential Memory Grid** (Последовательная память).
+  - 5x5 grid with numbers to memorize and recall.
+  - 3 levels of increasing difficulty.
+  - Scoring system: +5 for correct sequence, +1 for out-of-order numbers.
+  - Heart system: Hearts are only lost when clicking empty slots.
+  - Auto-advance logic: Skips already revealed numbers in the sequence.
+  - 1-second delay before showing the result modal to allow viewing the final reveal.
+  - Russian localization and "Masha and Papa" theme.
+  - Level 1 adjusted to 4x4 grid for easier start.
+  - Visual feedback: Correct sequence numbers turn green, out-of-order numbers turn orange.
+
+### Added
+
+- **Sequential Memory Grid Mini-Game**: A memory training game where players recall numbered positions.
+  - 3 difficulty levels with increasing grid sizes (up to 5x7).
+  - Memorization phase with countdown timer.
+  - Recall phase with stopwatch and 3-life (hearts) system.
+  - Child-friendly visual theme and Russian localization.
+  - Mobile-optimized layout.
+- **Project Rename**: Updated all project references from `mariyakulikova` to `mashakulikova` to match the new repository name and domain.
+- **Design System & Shared Components**:
+  - Centralized theme configuration in `src/theme/`.
+  - Reusable `Button`, `Heading`, `PageContainer`, and `Card` components.
+  - Comprehensive unit tests for all shared components.
 - **Automated Deployment**: GitHub Actions workflow for automatic build and deployment to GitHub Pages.
 - **Coins Shuffler Mini-Game**: A web-based, mobile-friendly puzzle game.
   - H-shaped board logic with 10 slots and 6 coins.

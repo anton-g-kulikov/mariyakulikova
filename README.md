@@ -1,4 +1,4 @@
-# mariyakulikova
+# mashakulikova
 
 A collection of mini-projects for Masha.
 

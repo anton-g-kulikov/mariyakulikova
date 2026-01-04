@@ -1,4 +1,4 @@
-# mariyakulikova - Development Guidelines for Claude Code
+# mashakulikova - Development Guidelines for Claude Code
 
 This file provides project instructions for Claude Code to ensure consistent development practices and workflow adherence.
 
