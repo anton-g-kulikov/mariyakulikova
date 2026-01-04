@@ -144,6 +144,13 @@
 - **Expected**: Countdown decreases during memorization; stopwatch increases during recall
 - **Test File**: `test/integration/memory-ui.test.tsx`
 
+### MEMORY-TEST-008: GameStats Mobile Responsiveness
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that GameStats component layout is responsive and fits small screens
+- **Expected**: Hearts and stopwatch are visible and correctly aligned; no horizontal overflow; layout adapts to narrow viewports
+- **Test File**: `test/unit/components/GameStats.test.tsx`
+
 ## Deployment Test Cases
 
 ### CONFIG-TEST-003: Verify Vite Base Path
@@ -320,7 +327,7 @@
 
 ### UI-TEST-008: Main Page Button Colors
 
-- **Status**: 📋 NOT STARTED
+- **Status**: ✅ COMPLETED
 - **Description**: Verify that August 2025 button is pink (primary) and mini-games are green (secondary)
 - **Expected**: "Август 2025" button has primary theme color; "Головоломка" and "Запоминалка" have secondary theme color
 - **Test File**: `test/integration/home-ui.test.tsx`

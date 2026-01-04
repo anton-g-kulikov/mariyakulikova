@@ -44,14 +44,14 @@ export const GridCell: React.FC<GridCellProps> = ({
     <motion.div
       onClick={isInteractive ? onClick : undefined}
       style={{
-        width: "60px",
-        height: "60px",
+        width: "clamp(45px, 12vw, 60px)",
+        height: "clamp(45px, 12vw, 60px)",
         backgroundColor: bgColor,
         borderRadius: theme.borderRadius.sm,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontSize: "24px",
+        fontSize: "clamp(18px, 5vw, 24px)",
         fontWeight: "bold",
         color: theme.colors.text,
         cursor: isInteractive ? "pointer" : "default",

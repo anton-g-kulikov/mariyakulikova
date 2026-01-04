@@ -31,17 +31,33 @@ export const GameStats: React.FC<GameStatsProps> = ({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        flexWrap: "wrap",
+        gap: "10px",
         width: "100%",
         maxWidth: "400px",
         margin: "0 auto 20px",
-        padding: "10px 20px",
+        padding: "10px clamp(10px, 4vw, 20px)",
         backgroundColor: theme.colors.white,
         borderRadius: theme.borderRadius.md,
         boxShadow: `0 4px 0 ${theme.colors.shadow}`,
+        boxSizing: "border-box",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-        <div style={{ display: "flex", gap: "2px", fontSize: "18px" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "5px",
+          minWidth: "fit-content",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "2px",
+            fontSize: "clamp(14px, 4vw, 18px)",
+          }}
+        >
           {Array.from({ length: totalLives }).map((_, i) => (
             <span key={i} style={{ opacity: i < lives ? 1 : 0.3 }}>
               ❤️
@@ -50,7 +66,7 @@ export const GameStats: React.FC<GameStatsProps> = ({
         </div>
         <div
           style={{
-            fontSize: "18px",
+            fontSize: "clamp(14px, 4vw, 18px)",
             fontWeight: "bold",
             color: theme.colors.primary,
           }}
@@ -59,15 +75,26 @@ export const GameStats: React.FC<GameStatsProps> = ({
         </div>
       </div>
 
-      <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          textAlign: "right",
+          flex: "1",
+          minWidth: "fit-content",
+        }}
+      >
         <div
-          style={{ fontSize: "14px", color: theme.colors.text, opacity: 0.7 }}
+          style={{
+            fontSize: "clamp(12px, 3.5vw, 14px)",
+            color: theme.colors.text,
+            opacity: 0.7,
+            whiteSpace: "nowrap",
+          }}
         >
           {levelName}
         </div>
         <div
           style={{
-            fontSize: "20px",
+            fontSize: "clamp(16px, 5vw, 20px)",
             fontWeight: "bold",
             color: theme.colors.heading,
           }}

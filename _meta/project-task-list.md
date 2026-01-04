@@ -48,7 +48,7 @@
 - [x] **UI-TASK-005: Refactor Home page to use shared components** - ✅ **COMPLETED** - Update Home.tsx to use the new design system components
 - [x] **UI-TASK-006: Refactor Coins Shuffler to use shared components** - ✅ **COMPLETED** - Update CoinsShuffler and sub-components to use the new design system components
 - [x] **UI-TASK-007: Fix main page mobile layout centering** - ✅ **COMPLETED** - Adjust PageContainer padding and component font sizes for better mobile responsiveness on small screens
-- [ ] **UI-TASK-008: Update main page button colors** - 🟡 **IN PROGRESS** - Change August 2025 button to pink (primary) and mini-games to green (secondary)
+- [x] **UI-TASK-008: Update main page button colors** - ✅ **COMPLETED** - Change August 2025 button to pink (primary) and mini-games to green (secondary)
 - [x] **CONFIG-TASK-005: Update project name to mashakulikova** - ✅ **COMPLETED** - Update all references from mariyakulikova to mashakulikova after repo rename
 
 ## Memory Grid Mini-Game
@@ -60,6 +60,7 @@
 - [x] **MEMORY-TASK-005: Add win/loss screens and level progression** - ✅ **COMPLETED** - Show results with 1s delay and allow moving to next levels
 - [x] **MEMORY-TASK-007: Implement scoring and auto-advance logic** - ✅ **COMPLETED** - Add +5/+1 scoring and skip revealed numbers in sequence
 - [x] **MEMORY-TASK-006: Integrate into main navigation and localization** - ✅ **COMPLETED** - Add route, Russian translations, and "На главную" link
+- [x] **MEMORY-TASK-008: Fix mobile responsiveness for GameStats** - ✅ **COMPLETED** - Adjust hearts and stopwatch layout for better mobile view in Memory Grid game
 
 ## Project Structure & Navigation
 

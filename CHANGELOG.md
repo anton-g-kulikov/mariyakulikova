@@ -46,6 +46,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Memory Grid UI**:
+  - Improved mobile responsiveness for `GameStats` (hearts and stopwatch).
+  - Implemented responsive grid cell sizes using `clamp` to fit smaller screens.
+  - Added `flex-wrap` and responsive padding to game stats container.
 - **Main Page UI**:
   - Updated button colors: August 2025 is now pink (primary), and mini-games are green (secondary).
 - **Mobile Responsiveness**:
