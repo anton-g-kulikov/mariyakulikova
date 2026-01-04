@@ -57,6 +57,9 @@
 - [x] **UI-TASK-007: Fix main page mobile layout centering** - ✅ **COMPLETED** - Adjust PageContainer padding and component font sizes for better mobile responsiveness on small screens
 - [x] **UI-TASK-008: Update main page button colors** - ✅ **COMPLETED** - Change August 2025 button to pink (primary) and mini-games to green (secondary)
 - [x] **CONFIG-TASK-005: Update project name to mashakulikova** - ✅ **COMPLETED** - Update all references from mariyakulikova to mashakulikova after repo rename
+- [x] **UI-TASK-009: Restructure Coins Shuffler layout** - ✅ **COMPLETED** - Move move counter into its own row, give the board a dedicated row, and place the legend below the field (Est: 1.5h)
+  1.  ✅ Update layout markup and styling to create the new stacked rows
+  2.  ✅ Adjust responsive behavior/tests to reflect the new structure
 
 ## Memory Grid Mini-Game
 

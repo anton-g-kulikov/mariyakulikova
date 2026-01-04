@@ -4,6 +4,27 @@ import "@testing-library/jest-dom";
 import { CoinsShuffler } from "../../src/minigames/coins-shuffler/CoinsShuffler";
 
 describe("Coins Shuffler UI", () => {
+  test("UI-TEST-009: Coins Shuffler stacked layout", () => {
+    render(<CoinsShuffler />);
+    const counterRow = screen.getByTestId("coins-layout-counter-row");
+    const boardRow = screen.getByTestId("coins-layout-board-row");
+    const legendRow = screen.getByTestId("coins-layout-legend-row");
+
+    // Ensure rows exist and appear in the expected vertical order
+    expect(counterRow).toBeInTheDocument();
+    expect(boardRow).toBeInTheDocument();
+    expect(legendRow).toBeInTheDocument();
+
+    expect(
+      counterRow.compareDocumentPosition(boardRow) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+    expect(
+      boardRow.compareDocumentPosition(legendRow) &
+        Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
   test("SHUFFLE-TEST-009: Legend Visibility", () => {
     render(<CoinsShuffler />);
     expect(screen.getByText(/Правила/i)).toBeInTheDocument();

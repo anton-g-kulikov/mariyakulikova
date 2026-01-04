@@ -187,11 +187,36 @@ export const CoinsShuffler: React.FC = () => {
       </div>
 
       <div
+        data-testid="coins-layout-counter-row"
         style={{
+          width: "100%",
           display: "flex",
-          gap: "40px",
-          flexWrap: "wrap",
           justifyContent: "center",
+          marginBottom: "24px",
+        }}
+      >
+        <Card
+          style={{
+            fontSize: "28px",
+            fontWeight: "bold",
+            textAlign: "center",
+            minWidth: "260px",
+            maxWidth: "360px",
+            width: "100%",
+          }}
+        >
+          Ходы: {state.moveCount}
+        </Card>
+      </div>
+
+      <div
+        data-testid="coins-layout-board-row"
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "30px",
+          padding: "10px 0",
         }}
       >
         <GameBoard
@@ -203,25 +228,21 @@ export const CoinsShuffler: React.FC = () => {
           selectedSlot={selectedSlot}
           isMobile={isMobile}
         />
+      </div>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-            maxWidth: "300px",
-          }}
-        >
-          <Card
-            style={{
-              fontSize: "28px",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            Ходы: {state.moveCount}
-          </Card>
-          <Legend />
+      <div
+        data-testid="coins-layout-legend-row"
+        style={{
+          width: "100%",
+          maxWidth: "720px",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+        }}
+      >
+        <Legend />
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <Button onClick={handleReset}>Начать заново</Button>
         </div>
       </div>

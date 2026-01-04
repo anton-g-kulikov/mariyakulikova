@@ -321,6 +321,13 @@
 - **Expected**: `getInitialState(4)` loads Maze configuration, `getInitialState(5)` loads Classic configuration, and UI level buttons/rendering follow the new order
 - **Test File**: `test/unit/shuffle-logic.test.ts`, `test/integration/shuffle-ui.test.tsx`
 
+### UI-TEST-009: Coins Shuffler stacked layout
+
+- **Status**: ✅ COMPLETED
+- **Description**: Ensure the Coins Shuffler page renders the move counter in its own row above the game board, the board in a dedicated row, and the legend/reset controls below the board.
+- **Expected**: DOM structure (and visual layout) shows a stacked column: heading → counter card row (full width), board row centered, legend/reset row beneath; responsive layout keeps this order on small screens.
+- **Test File**: `test/integration/shuffle-ui.test.tsx`
+
 ## UI Test Cases
 
 | Test Case ID | Description                                                           | Type        | Status      |
