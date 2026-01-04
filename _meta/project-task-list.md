@@ -39,7 +39,7 @@
 
 - [x] **SHUFFLE-TASK-025: Increase move-dot hit radius to 33px** - ✅ **COMPLETED** - Further expand the invisible target circle for move dots from 22px to 33px radius to improve tapability
 
-- [x] **SHUFFLE-TASK-026: Redesign Level 4: "The Clover"** - ✅ **COMPLETED** - Replace the cross design with a more complex "Clover" layout (13 slots, loops)
+- [x] **SHUFFLE-TASK-026: Redesign Level 4: "The Clover"** - ✅ **COMPLETED** - Replace the cross design with a more complex "Clover" layout with a central obstacle (12 slots, loops)
 - [x] **SHUFFLE-TASK-027: Design and implement Level 5: "The Maze"** - ✅ **COMPLETED** - Add a new level with a more complex branching structure and 8 coins
 
 ## UI & Layout

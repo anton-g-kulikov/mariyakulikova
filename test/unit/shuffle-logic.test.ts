@@ -67,14 +67,21 @@ describe("Coins Shuffler Logic", () => {
     expect(level4).toBeDefined();
     if (!level4) return;
 
-    expect(level4.slots.length).toBe(13);
-    
+    expect(level4.slots.length).toBe(12);
+
     const winPositions: Record<string, any> = {
-      CC: null,
-      N: null, S: null, E: null, W: null,
-      NW: "green", NE: "green", PN: "green",
-      SW: "blue", SE: "blue", PS: "blue",
-      PE: null, PW: null,
+      N: null,
+      S: null,
+      E: null,
+      W: null,
+      NW: "green",
+      NE: "green",
+      PN: "green",
+      SW: "blue",
+      SE: "blue",
+      PS: "blue",
+      PE: null,
+      PW: null,
     };
     expect(level4.winCondition(winPositions as any)).toBe(true);
   });
@@ -85,11 +92,22 @@ describe("Coins Shuffler Logic", () => {
     if (!level5) return;
 
     expect(level5.slots.length).toBe(14);
-    
+
     const winPositions: Record<string, any> = {
-      L1: "green", L2: "green", L5: "green", L6: "green",
-      R1: "blue", R2: "blue", R5: "blue", R6: "blue",
-      L3: null, L4: null, R3: null, R4: null, B1: null, B2: null,
+      L1: "green",
+      L2: "green",
+      L5: "green",
+      L6: "green",
+      R1: "blue",
+      R2: "blue",
+      R5: "blue",
+      R6: "blue",
+      L3: null,
+      L4: null,
+      R3: null,
+      R4: null,
+      B1: null,
+      B2: null,
     };
     // Adjusting win condition based on final design
     expect(level5.winCondition(winPositions as any)).toBe(true);

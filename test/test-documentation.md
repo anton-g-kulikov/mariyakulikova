@@ -297,7 +297,7 @@
 
 - **Status**: ✅ COMPLETED
 - **Description**: Verify that Level 4 (The Clover) has correct slots, adjacency, and win condition
-- **Expected**: Level 4 is selectable, has 13 slots with loops, and win condition triggers when coins are swapped
+- **Expected**: Level 4 is selectable, has 12 slots with loops and a central obstacle, and win condition triggers when coins are swapped
 - **Test File**: `test/unit/shuffle-logic.test.ts`
 
 ### SHUFFLE-TEST-027: Level 5 Configuration and Win Condition
