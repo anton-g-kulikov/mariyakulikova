@@ -318,6 +318,13 @@
 - **Expected**: PageContainer has reduced padding on small screens; Heading and Button font sizes are appropriate for mobile; No horizontal scrollbar present
 - **Test File**: `test/unit/components/*.test.tsx` (Verified via responsive style implementation and unit tests)
 
+### UI-TEST-008: Main Page Button Colors
+
+- **Status**: 📋 NOT STARTED
+- **Description**: Verify that August 2025 button is pink (primary) and mini-games are green (secondary)
+- **Expected**: "Август 2025" button has primary theme color; "Головоломка" and "Запоминалка" have secondary theme color
+- **Test File**: `test/integration/home-ui.test.tsx`
+
 ## Test Coverage Goals
 
 - Unit Tests: 80%+ coverage for critical functionality

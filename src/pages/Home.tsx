@@ -27,6 +27,7 @@ export const Home: React.FC = () => {
               as={Link}
               to="/coins-shuffler"
               size="lg"
+              variant="secondary"
               style={{ display: "block", width: "100%" }}
             >
               🎮 Головоломка
@@ -47,7 +48,6 @@ export const Home: React.FC = () => {
             <Button
               as="a"
               href="/august2025/presentation.html"
-              variant="secondary"
               size="lg"
               style={{ display: "block", width: "100%" }}
             >

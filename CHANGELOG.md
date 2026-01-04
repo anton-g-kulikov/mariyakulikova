@@ -46,6 +46,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Main Page UI**:
+  - Updated button colors: August 2025 is now pink (primary), and mini-games are green (secondary).
 - **Mobile Responsiveness**:
   - Improved main page layout for small mobile devices (Android/iOS).
   - Implemented responsive padding in `PageContainer` using `clamp`.

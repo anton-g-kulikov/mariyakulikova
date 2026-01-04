@@ -48,6 +48,7 @@
 - [x] **UI-TASK-005: Refactor Home page to use shared components** - ✅ **COMPLETED** - Update Home.tsx to use the new design system components
 - [x] **UI-TASK-006: Refactor Coins Shuffler to use shared components** - ✅ **COMPLETED** - Update CoinsShuffler and sub-components to use the new design system components
 - [x] **UI-TASK-007: Fix main page mobile layout centering** - ✅ **COMPLETED** - Adjust PageContainer padding and component font sizes for better mobile responsiveness on small screens
+- [ ] **UI-TASK-008: Update main page button colors** - 🟡 **IN PROGRESS** - Change August 2025 button to pink (primary) and mini-games to green (secondary)
 - [x] **CONFIG-TASK-005: Update project name to mashakulikova** - ✅ **COMPLETED** - Update all references from mariyakulikova to mashakulikova after repo rename
 
 ## Memory Grid Mini-Game

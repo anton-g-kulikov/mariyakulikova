@@ -1,0 +1,30 @@
+import React from "react";
+import { TextEncoder, TextDecoder } from "util";
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder as any;
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { Home } from "../../src/pages/Home";
+import { theme } from "../../src/theme";
+import "@testing-library/jest-dom";
+
+describe("Home Page", () => {
+  it("renders buttons with correct variants", () => {
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>
+    );
+
+    const puzzleButton = screen.getByText(/Головоломка/i);
+    const memoryButton = screen.getByText(/Запоминалка/i);
+    const presentationButton = screen.getByText(/Август 2025/i);
+
+    // Mini-games should be green (secondary)
+    expect(puzzleButton).toHaveStyle({ backgroundColor: theme.colors.secondary });
+    expect(memoryButton).toHaveStyle({ backgroundColor: theme.colors.secondary });
+
+    // Presentation should be pink (primary)
+    expect(presentationButton).toHaveStyle({ backgroundColor: theme.colors.primary });
+  });
+});
