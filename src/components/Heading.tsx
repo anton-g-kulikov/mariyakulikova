@@ -15,9 +15,9 @@ export const Heading: React.FC<HeadingProps> = ({
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   const fontSize = {
-    1: "clamp(32px, 10vw, 48px)",
-    2: "clamp(24px, 8vw, 36px)",
-    3: "clamp(20px, 6vw, 24px)",
+    1: "clamp(36px, 12vw, 48px)",
+    2: "clamp(28px, 10vw, 36px)",
+    3: "clamp(22px, 8vw, 24px)",
   }[level];
 
   const color = level === 1 ? theme.colors.text : theme.colors.heading;

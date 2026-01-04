@@ -27,8 +27,9 @@ export const Button: React.FC<ButtonProps> = ({
   const padding =
     size === "lg"
       ? "clamp(15px, 4vw, 20px) clamp(20px, 8vw, 40px)"
-      : "15px 30px";
-  const fontSize = size === "lg" ? "clamp(20px, 5vw, 24px)" : "20px";
+      : "clamp(10px, 3vw, 15px) clamp(20px, 6vw, 30px)";
+  const fontSize =
+    size === "lg" ? "clamp(20px, 5vw, 24px)" : "clamp(16px, 4vw, 20px)";
   const borderRadius =
     size === "lg" ? theme.borderRadius.xl : theme.borderRadius.lg;
   const shadowHeight = size === "lg" ? 6 : 4;

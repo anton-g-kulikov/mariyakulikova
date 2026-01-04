@@ -55,7 +55,7 @@ export const GameStats: React.FC<GameStatsProps> = ({
           style={{
             display: "flex",
             gap: "2px",
-            fontSize: "clamp(14px, 4vw, 18px)",
+            fontSize: "clamp(16px, 5vw, 18px)",
           }}
         >
           {Array.from({ length: totalLives }).map((_, i) => (
@@ -66,7 +66,7 @@ export const GameStats: React.FC<GameStatsProps> = ({
         </div>
         <div
           style={{
-            fontSize: "clamp(14px, 4vw, 18px)",
+            fontSize: "clamp(16px, 5vw, 18px)",
             fontWeight: "bold",
             color: theme.colors.primary,
           }}
@@ -84,7 +84,7 @@ export const GameStats: React.FC<GameStatsProps> = ({
       >
         <div
           style={{
-            fontSize: "clamp(12px, 3.5vw, 14px)",
+            fontSize: "clamp(14px, 4vw, 14px)",
             color: theme.colors.text,
             opacity: 0.7,
             whiteSpace: "nowrap",
@@ -94,7 +94,7 @@ export const GameStats: React.FC<GameStatsProps> = ({
         </div>
         <div
           style={{
-            fontSize: "clamp(16px, 5vw, 20px)",
+            fontSize: "clamp(18px, 6vw, 20px)",
             fontWeight: "bold",
             color: theme.colors.heading,
           }}

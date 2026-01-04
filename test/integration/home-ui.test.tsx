@@ -21,10 +21,16 @@ describe("Home Page", () => {
     const presentationButton = screen.getByText(/Август 2025/i);
 
     // Mini-games should be green (secondary)
-    expect(puzzleButton).toHaveStyle({ backgroundColor: theme.colors.secondary });
-    expect(memoryButton).toHaveStyle({ backgroundColor: theme.colors.secondary });
+    expect(puzzleButton).toHaveStyle({
+      backgroundColor: theme.colors.secondary,
+    });
+    expect(memoryButton).toHaveStyle({
+      backgroundColor: theme.colors.secondary,
+    });
 
     // Presentation should be pink (primary)
-    expect(presentationButton).toHaveStyle({ backgroundColor: theme.colors.primary });
+    expect(presentationButton).toHaveStyle({
+      backgroundColor: theme.colors.primary,
+    });
   });
 });

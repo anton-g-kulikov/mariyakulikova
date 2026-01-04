@@ -17,7 +17,7 @@ export const GridBoard: React.FC<GridBoardProps> = ({
   phase,
   onCellClick,
 }) => {
-  const cellSize = "clamp(45px, 12vw, 60px)";
+  const cellSize = "clamp(50px, 16vw, 60px)";
   const gap = "clamp(5px, 2vw, 10px)";
 
   return (
@@ -27,7 +27,7 @@ export const GridBoard: React.FC<GridBoardProps> = ({
         gridTemplateColumns: `repeat(${width}, ${cellSize})`,
         gridTemplateRows: `repeat(${height}, ${cellSize})`,
         gap,
-        padding: "clamp(10px, 3vw, 15px)",
+        padding: "clamp(8px, 2vw, 15px)",
         backgroundColor: "rgba(255, 255, 255, 0.3)",
         borderRadius: "20px",
         justifyContent: "center",

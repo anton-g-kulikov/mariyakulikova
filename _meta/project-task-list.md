@@ -62,6 +62,7 @@
 - [x] **MEMORY-TASK-006: Integrate into main navigation and localization** - ✅ **COMPLETED** - Add route, Russian translations, and "На главную" link
 - [x] **MEMORY-TASK-008: Fix mobile responsiveness for GameStats** - ✅ **COMPLETED** - Adjust hearts and stopwatch layout for better mobile view in Memory Grid game
 - [x] **MEMORY-TASK-009: Show error count in final dialogue** - ✅ **COMPLETED** - Track total errors (out-of-order and empty clicks) and display them in the result modal
+- [x] **MEMORY-TASK-010: Increase UI sizes for mobile** - ✅ **COMPLETED** - Scale up grid cells, font sizes, and buttons for better visibility on iPhone screens
 
 ## Project Structure & Navigation
 
