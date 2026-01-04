@@ -61,4 +61,36 @@ describe("Coins Shuffler Logic", () => {
     const initialPositions = getInitialState(3).positions;
     expect(level3.winCondition(initialPositions)).toBe(false);
   });
+
+  test("SHUFFLE-TEST-026: Level 4 Configuration and Win Condition", () => {
+    const level4 = LEVELS.find((l) => l.id === 4);
+    expect(level4).toBeDefined();
+    if (!level4) return;
+
+    expect(level4.slots.length).toBe(13);
+    
+    const winPositions: Record<string, any> = {
+      C: null,
+      A1: null, A2: null, A3: null, A4: null, A5: null, A6: null,
+      O1: "green", O2: "green", O3: "green",
+      O4: "blue", O5: "blue", O6: "blue",
+    };
+    expect(level4.winCondition(winPositions as any)).toBe(true);
+  });
+
+  test("SHUFFLE-TEST-027: Level 5 Configuration and Win Condition", () => {
+    const level5 = LEVELS.find((l) => l.id === 5);
+    expect(level5).toBeDefined();
+    if (!level5) return;
+
+    expect(level5.slots.length).toBe(14);
+    
+    const winPositions: Record<string, any> = {
+      L1: "green", L2: "green", L5: "green", L6: "green",
+      R1: "blue", R2: "blue", R5: "blue", R6: "blue",
+      L3: null, L4: null, R3: null, R4: null, B1: null, B2: null,
+    };
+    // Adjusting win condition based on final design
+    expect(level5.winCondition(winPositions as any)).toBe(true);
+  });
 });

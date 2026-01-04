@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Coins Shuffler**: Added Level 4 ("Звезда") and Level 5 ("Лабиринт") with new board layouts and increased difficulty.
 - New minigame: **Sequential Memory Grid** (Последовательная память).
   - 5x5 grid with numbers to memorize and recall.
   - 3 levels of increasing difficulty.

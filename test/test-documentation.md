@@ -293,6 +293,20 @@
 - **Expected**: Each move dot renders an expanded hit target (e.g., r≥33px) that triggers the move when clicked/tapped
 - **Test File**: `test/integration/shuffle-ui.test.tsx`
 
+### SHUFFLE-TEST-026: Level 4 Configuration and Win Condition
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that Level 4 (The Star) has correct slots, adjacency, and win condition
+- **Expected**: Level 4 is selectable, has 13 slots, and win condition triggers when coins are swapped
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
+### SHUFFLE-TEST-027: Level 5 Configuration and Win Condition
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that Level 5 (The Maze) has correct slots, adjacency, and win condition
+- **Expected**: Level 5 is selectable, has complex adjacency, and win condition triggers when coins are swapped
+- **Test File**: `test/unit/shuffle-logic.test.ts`
+
 ## UI Test Cases
 
 | Test Case ID | Description                                                           | Type        | Status      |

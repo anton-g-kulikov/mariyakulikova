@@ -39,6 +39,9 @@
 
 - [x] **SHUFFLE-TASK-025: Increase move-dot hit radius to 33px** - ✅ **COMPLETED** - Further expand the invisible target circle for move dots from 22px to 33px radius to improve tapability
 
+- [x] **SHUFFLE-TASK-026: Design and implement Level 4: "The Star"** - ✅ **COMPLETED** - Add a new level with 13 slots in a star configuration and 6 coins
+- [x] **SHUFFLE-TASK-027: Design and implement Level 5: "The Maze"** - ✅ **COMPLETED** - Add a new level with a more complex branching structure and 8 coins
+
 ## UI & Layout
 
 - [x] **UI-TASK-001: Restore page scroll while keeping drag/tap playable** - ✅ **COMPLETED** - Allow vertical page scrolling again (after drag controls removal) while preserving game usability; prevent horizontal overflow
