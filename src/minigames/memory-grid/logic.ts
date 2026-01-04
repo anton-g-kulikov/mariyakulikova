@@ -16,6 +16,7 @@ export interface GameState {
   currentExpectedNumber: number;
   lives: number;
   score: number;
+  errors: number;
   startTime: number; // timestamp when recall started
   endTime: number | null; // timestamp when game ended
   memorizeTimeLeft: number; // seconds
@@ -67,6 +68,7 @@ export function startNewGame(
     currentExpectedNumber: 1,
     lives: lives,
     score: 0,
+    errors: 0,
     startTime: 0,
     endTime: null,
     memorizeTimeLeft: memorizeTime,
@@ -95,6 +97,7 @@ export function handleCellClick(state: GameState, cellId: number): GameState {
   let newScore = state.score;
   let nextExpected = state.currentExpectedNumber;
   let newLives = state.lives;
+  let newErrors = state.errors;
 
   if (cell.value !== null) {
     // Clicked a number
@@ -116,10 +119,12 @@ export function handleCellClick(state: GameState, cellId: number): GameState {
     } else {
       // Out of order
       newScore += 1;
+      newErrors += 1;
     }
   } else {
     // Clicked an empty slot
     newLives -= 1;
+    newErrors += 1;
   }
 
   // Check win/loss
@@ -134,6 +139,7 @@ export function handleCellClick(state: GameState, cellId: number): GameState {
       cells: newCells,
       lives: 0,
       score: newScore,
+      errors: newErrors,
       phase: "lost",
       endTime: Date.now(),
     };
@@ -145,6 +151,7 @@ export function handleCellClick(state: GameState, cellId: number): GameState {
       cells: newCells,
       lives: newLives,
       score: newScore,
+      errors: newErrors,
       phase: "won",
       endTime: Date.now(),
     };
@@ -155,6 +162,7 @@ export function handleCellClick(state: GameState, cellId: number): GameState {
     cells: newCells,
     lives: newLives,
     score: newScore,
+    errors: newErrors,
     currentExpectedNumber: nextExpected,
   };
 }

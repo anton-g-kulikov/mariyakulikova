@@ -170,6 +170,16 @@ export const MemoryGrid: React.FC = () => {
                 ⭐ Очки: {gameState.score}
               </p>
               <p>Время: {(recallTime / 1000).toFixed(1)}с</p>
+              <p
+                style={{
+                  fontSize: "18px",
+                  color: theme.colors.text,
+                  opacity: 0.8,
+                  marginTop: "5px",
+                }}
+              >
+                Ошибки: {gameState.errors}
+              </p>
             </div>
             <div
               style={{ display: "flex", flexDirection: "column", gap: "10px" }}

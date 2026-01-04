@@ -151,6 +151,13 @@
 - **Expected**: Hearts and stopwatch are visible and correctly aligned; no horizontal overflow; layout adapts to narrow viewports
 - **Test File**: `test/unit/components/GameStats.test.tsx`
 
+### MEMORY-TEST-009: Error Tracking and Display
+
+- **Status**: ✅ COMPLETED
+- **Description**: Verify that the game tracks total errors and displays them in the final dialogue
+- **Expected**: `errors` count increments on out-of-order clicks and empty slot clicks; final dialogue shows "Ошибки: N"
+- **Test File**: `test/unit/memory-logic.test.ts`
+
 ## Deployment Test Cases
 
 ### CONFIG-TEST-003: Verify Vite Base Path

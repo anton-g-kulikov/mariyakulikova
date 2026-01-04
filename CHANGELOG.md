@@ -47,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Memory Grid UI**:
+  - Added total error count display in the final result dialogue.
   - Improved mobile responsiveness for `GameStats` (hearts and stopwatch).
   - Implemented responsive grid cell sizes using `clamp` to fit smaller screens.
   - Added `flex-wrap` and responsive padding to game stats container.
